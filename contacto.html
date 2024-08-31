@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>JETXCEL S.A.S</title>
+    <link rel="icon" href="pixelcut-export (2).png" style="border-radius: 50%;" type="image/png">
+    <link rel="stylesheet" href="estilo.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin=""> -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="wsp.css">
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <a href="https://api.whatsapp.com/send?phone=573115310226&text=Hola%20Santos" class="btn-wsp"id="btnWsp" target="_blank">
+	    <i class="fa-brands fa-whatsapp"></i>
+	</a>
+    <script>
+        window.onload = function() {
+            document.querySelector('.btn-wsp').classList.add('show');
+        };
+      </script>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a  href="#">
+                    <h1 class="nav_titulo">JETXCEL S.A.S</h1>
+                    
+                </a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="nosotros.html" onclick="seleccionar()">NOSOTROS</a></li>
+                    <li><a href="servicios.html" onclick="seleccionar()">SERVICIOS</a></li>
+                    <!-- <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li> -->
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+
+    <!-- SECCION CONTACTO -->
+<section id="contacto" class="contacto">
+    <div class="contenido-seccion">
+        <h2>CONTACTANOS</h2>
+        <div class="fila">
+            <!-- Formulario -->
+            <div class="col">
+                <form action="enviar_correo.php" method="POST">
+                    <input type="text" name="Nombre" placeholder="Tú Nombre" required>
+                    <input type="tel" name="Telefono" placeholder="Número telefónico" required>
+                    <input type="email" name="Correo" placeholder="Dirección de correo" required>
+                    <textarea name="mensaje" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar Mensaje <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.77980361572196!2d-71.73505041775877!3d6.4611086685345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6ec648faf01d39%3A0x2e2ec7bcda3781d0!2sPIZZA-GER!5e0!3m2!1ses!2sco!4v1718914822068!5m2!1ses!2sco" width="500" height="480" style="border-radius:10px; margin-top: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+   
+    
+    <style>
+        .map-container {
+        position: relative;
+        width: calc(100% - 20px); /* Ajusta el ancho restando 40px para márgenes laterales */
+        padding-bottom: 56.25%; /* Ratio 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 10px auto; /* Centramos el contenedor con márgenes automáticos */
+    }
+    
+    .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    
+    @media (min-width: 768px) {
+        .map-container {
+            width: 550px; /* Ancho fijo para pantallas más grandes */
+            height: 485px; /* Altura fija para pantallas más grandes */
+            padding-bottom: 0;
+            margin: 0 auto;
+        }
+    }
+    .p_copyright{
+        font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+    
+    }
+    .footer_info {
+        font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+    }
+    
+    .redes a i {
+        font-size: 24px; /* Tamaño de los iconos por defecto */
+    }
+    hr{
+        width: 70%;
+        margin: auto; 
+        margin-bottom: 10px;
+    }
+    .nav_titulo{
+        font-size: 40px; 
+        color: #FDD01C;
+    }
+    
+    
+    @media (max-width: 767px) {
+        .footer_info  {
+            font-size: 15px; /* Tamaño de letra reducido para dispositivos móviles */
+        }
+        .p_copyright{
+        font-size: 15px; /* Tamaño de letra por defecto para escritorio */
+    
+    }
+    
+        .redes a i {
+            font-size: 20px; /* Tamaño de los iconos reducido para dispositivos móviles */
+        }
+    
+        hr {
+            width: 100%; /* Ajusta el ancho del hr para dispositivos móviles */
+            margin: auto; 
+            margin-bottom: 10px;
+        }
+    
+        .footer p {
+            font-size: 14px; /* Ajusta el tamaño de letra del párrafo del copyright */
+        }
+        .nav_titulo{
+        font-size: 30px; 
+        color: #FDD01C;
+    }
+    
+    }
+    
+    
+        </style>
+        <footer >
+            <a href="#contacto" class="arriba">
+                <i class="fa-solid fa-angles-up"></i>
+            </a>
+            
+            <div class="contact-info">
+                <div class="redes">
+                    <a href="https://www.facebook.com/people/Jetxcel-SAS/100093263952966/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jetxcel_sas/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    
+                </div>
+                <hr>
+                <p class="footer_info">Tame-Arauca</p>
+                <p class="footer_info"><strong style="color: #FDD01C;">Whatsapp:</strong> +57 314 3594424</p>
+                <p class="footer_info"><strong style="color: #FDD01C;">Correo:</strong> atencionalcliente@jetxcel.com</p>
+                <br>
+                <p class="p_copyright">©2024 Jetxcel S.A.S.</p>
+                
+            </div>
+           
+        </footer>
+
+    <script src="script.js"></script>
+      <!--=============== SWIPER JS ===============-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+</body>
+</html>

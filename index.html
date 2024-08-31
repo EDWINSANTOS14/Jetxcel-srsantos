@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>JETXCEL S.A.S</title>
+    <link rel="icon" href="pixelcut-export (2).png" style="border-radius: 50%;" type="image/png">
+    <link rel="stylesheet" href="estilo.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin=""> -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="wsp.css">
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Jetxcel S.A.S",
+            "url": "https://www.jetxcel.com",
+            "logo": "https://www.jetxcel.com/logo.png",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+57 314 3594424",
+                "contactType": "customer service",
+                "areaServed": "CO",
+                "availableLanguage": "Spanish"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Tame",
+                "addressRegion": "Arauca",
+                "addressCountry": "CO"
+            }
+        }
+        </script>
+        
+</head>
+<body>
+    <a href="https://api.whatsapp.com/send?phone=573115310226&text=Hola%20Santos" class="btn-wsp"id="btnWsp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+	</a>
+    
+  <script>
+    window.onload = function() {
+        document.querySelector('.btn-wsp').classList.add('show');
+    };
+  </script>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a  href="#">
+                    <h1 class="nav_titulo">JETXCEL S.A.S</h1>
+                    
+                </a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="nosotros.html" onclick="seleccionar()">NOSOTROS</a></li>
+                    <li><a href="servicios.html" onclick="seleccionar()">SERVICIOS</a></li>
+                    <!-- <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li> -->
+                    <li><a href="contacto.html" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+<!-- SECCION INICIO -->
+<section id="inicio" class="inicio">
+    <div class="slider">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <h2>DESARROLLO DE SOFTWARE</h2>
+                <hr>
+                <p>Diseño Gráfico</p>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <h2>MARKETING DIGITAL</h2>
+                <hr>
+                <p>Diseño Gráfico</p>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <h2>AUTOMATIZACIÓN DE PROYECTOS</h2>
+                <hr>
+                <p>Diseño Gráfico</p>
+            </div>
+        </div>
+        <!-- Navigation dots -->
+        <div class="navigation-dots">
+            <div class="dot" onclick="currentSlide(1)"></div>
+            <div class="dot" onclick="currentSlide(2)"></div>
+            <div class="dot" onclick="currentSlide(3)"></div>
+        </div>
+    </div>
+
+    
+</section>
+
+
+
+<!-- SECCION SOBRE MI -->
+<section id="sobremi" class="sobremi">
+    <div class="contenido-seccion">
+        <h2>Jetxcel Desarrollo De Software</h2>
+        <p>Jetxcel es una empresa líder en <span style="color: #FDD01C;">desarrollo de software en Tame, Arauca,</span> dedicada a la innovación tecnológica local. Nos enfocamos en crear soluciones digitales que impulsan el crecimiento y la eficiencia empresarial, contribuyendo al desarrollo económico y tecnológico de la región mediante aplicaciones y plataformas adaptadas a las necesidades.</p>
+
+        <div class="fila">
+            <div style="margin: auto;" class="col">
+                <div class="contenedor-intereses">
+                    <div class="interes">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <p class="descripcion">+ de 2 años de<br> experiencia</p>
+                    </div>
+                    <div class="interes">
+                        <i class="fa-solid fa-gears"></i>
+                        <p class="descripcion">+ de 20 proyectos<br> ejecutados</p>
+                    </div>
+                    <div class="interes">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                        <p class="descripcion">+ de 1000 tazas<br> de cafe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- SECCION CURRICULUM -->
+<section id="curriculum" class="curriculum">
+    <div class="contenido-seccion">
+       
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-image">
+                    <img src="Imagen-de-WhatsApp-2023-08-30-a-las-15.04.29.jpg" alt="Capacitación">
+                </div>
+                <div class="card-content">
+                    <h4>Capacitando a la futura generación</h4>
+                    <p>Nos dedicamos a proporcionar educación, formación y recursos para empoderar a los jóvenes y prepararlos para enfrentar los desafíos y oportunidades del futuro.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="Imagen-de-WhatsApp-2023-08-30-a-las-15.04.25.jpg" alt="Innovación">
+                </div>
+                <div class="card-content">
+                    <h4>Innovación en acción</h4>
+                    <p>Nos enfocamos en la implementación de soluciones innovadoras para fomentar el crecimiento y el desarrollo.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="Imagen-de-WhatsApp-2023-09-27-a-las-10.17.59.jpg" alt="Tecnología">
+                </div>
+                <div class="card-content">
+                    <h4>Impulsando el potencial de los jóvenes mediante la innovación tecnológica</h4>
+                    <p>Somos un equipo altamente capacitado de jóvenes profesionales dedicados a ofrecer soluciones digitales de excelencia. Desde el desarrollo de páginas web modernas y funcionales hasta estrategias de marketing digital efectivas, aplicaciones móviles personalizadas y soluciones de software innovadoras.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="Imagen-de-WhatsApp-2023-08-30-a-las-15.04.29.jpg" alt="Futuro">
+                </div>
+                <div class="card-content">
+                    <h4>En el camino de la innovación</h4>
+                    <p>Como navegantes del futuro, nos impulsa la visión de un mundo transformado por nuestras acciones. Nos esforzamos por construir un futuro en el que la tecnología y la innovación generen un impacto positivo en la sociedad y en los negocios.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECCION NUESTROS CLIENTES -->
+<section id="nuestros-clientes">
+    <h2>Nuestros Clientes</h2>
+    <div class="slider-unique">
+        <div class="slide-track-unique">
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="genovas-llanero.png" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="rtt-transporte.jpg" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="380877182_270197509264014_2763357982268246139_n.jpg" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="kalu-telecomunicaciones.jpg" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="funmosoa.jpg" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="inovacenter.png" alt="">
+                </a>
+            </div>
+
+            <!-- Repetición de las imágenes para el efecto de scroll infinito -->
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="genovas-llanero.png" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="rtt-transporte.jpg" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="380877182_270197509264014_2763357982268246139_n.jpg" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="kalu-telecomunicaciones.jpg" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="funmosoa.jpg" alt="">
+                </a>
+            </div>
+            <div class="slide-unique">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="inovacenter.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="about-us-custom">
+    <div class="content-custom">
+        <img src="Imagen de WhatsApp 2024-08-29 a las 19.04.48_9c270615.jpg" alt="Logo" class="logo-custom">
+        <h1 class="about-us-title">Conozca más de nosotros</h1>
+        <hr class="about-us-divider">
+        <p class="about-us-subtitle">Síganos en nuestras redes</p>
+        <div style=" margin-top: 10px;" class="redes-custom">
+            <a  href="https://www.facebook.com/people/Jetxcel-SAS/100093263952966/" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/jetxcel_sas/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+   
+<style>
+    .map-container {
+    position: relative;
+    width: calc(100% - 20px); /* Ajusta el ancho restando 40px para márgenes laterales */
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px auto; /* Centramos el contenedor con márgenes automáticos */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (min-width: 768px) {
+    .map-container {
+        width: 550px; /* Ancho fijo para pantallas más grandes */
+        height: 485px; /* Altura fija para pantallas más grandes */
+        padding-bottom: 0;
+        margin: 0 auto;
+    }
+}
+.p_copyright{
+    font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+
+}
+.footer_info {
+    font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+}
+
+.redes a i {
+    font-size: 24px; /* Tamaño de los iconos por defecto */
+}
+hr{
+    width: 70%;
+    margin: auto; 
+    margin-bottom: 10px;
+}
+.nav_titulo{
+    font-size: 40px; 
+    color: #FDD01C;
+}
+
+
+@media (max-width: 767px) {
+    .footer_info  {
+        font-size: 16px; /* Tamaño de letra reducido para dispositivos móviles */
+    }
+    .p_copyright{
+    font-size: 15px; /* Tamaño de letra por defecto para escritorio */
+
+}
+
+    .redes a i {
+        font-size: 20px; /* Tamaño de los iconos reducido para dispositivos móviles */
+    }
+
+    hr {
+        width: 100%; /* Ajusta el ancho del hr para dispositivos móviles */
+        margin: auto; 
+        margin-bottom: 10px;
+    }
+
+    .footer p {
+        font-size: 14px; /* Ajusta el tamaño de letra del párrafo del copyright */
+    }
+    .nav_titulo{
+    font-size: 30px; 
+    color: #FDD01C;
+}
+
+}
+
+
+    </style>
+    <footer >
+        <a href="#sobremi" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        
+        <div class="contact-info">
+            <div class="redes">
+                <a href="https://www.facebook.com/people/Jetxcel-SAS/100093263952966/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/jetxcel_sas/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                
+            </div>
+            <hr>
+            <p class="footer_info">Tame-Arauca</p>
+            <p class="footer_info"><strong style="color: #FDD01C;">Whatsapp:</strong> +57 314 3594424</p>
+            <p class="footer_info"><strong style="color: #FDD01C;">Correo:</strong> atencionalcliente@jetxcel.com</p>
+            <br>
+            <p class="p_copyright">©2024 Jetxcel S.A.S.</p>
+            
+        </div>
+       
+    </footer>
+    
+
+    <script src="script.js"></script>
+      <!--=============== SWIPER JS ===============-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+</body>
+</html>

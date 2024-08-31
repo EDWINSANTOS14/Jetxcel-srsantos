@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider de Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<style>
+    /* Estilos base */
+.sobremi .fila .col {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+.sobremi .fila .col .contenedor-intereses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos dentro del contenedor */
+    gap: 30px; /* Espacio entre elementos */
+}
+
+.sobremi .fila .col .contenedor-intereses .interes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s;
+    color: #000;
+    text-align: center; /* Asegura que el texto esté centrado */
+    margin: 20px 0; /* Espacio alrededor de cada interés */
+}
+
+.sobremi .fila .col .contenedor-intereses .interes i {
+    font-size: 30px; /* Ajusta el tamaño del ícono */
+    width: 80px; /* Tamaño del círculo */
+    height: 80px; /* Tamaño del círculo */
+    background-color: #f9e635;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.sobremi .fila .col .contenedor-intereses .interes p.descripcion {
+    margin: 0;
+    font-size: 20px; /* Tamaño de fuente del texto */
+    color: #ddd;
+    font-weight: bold;
+}
+
+/* Media query para pantallas grandes (PC) */
+@media (min-width: 768px) {
+    .sobremi .fila .col .contenedor-intereses {
+        flex-wrap: nowrap; /* Evita el wrap para pantallas grandes */
+        justify-content: space-around; /* Espacio entre elementos distribuido uniformemente */
+        gap: 100px; /* Mayor espacio entre elementos */
+    }
+}
+
+</style>
+<body>
+    <div class="slider-container">
+        <h2>Nuestros clientes</h2>
+        <p>Ellos confían en nosotros.</p>
+        <div class="slider">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <div class="slides">
+                <img src="davinci.png" alt="davinci">
+                <img src="cafam.png" alt="cafam">
+                <img src="laperla.png" alt="laperla">
+                <img src="optecom.png" alt="optecom">
+            </div>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

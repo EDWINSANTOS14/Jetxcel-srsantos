@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios</title>
+    <style>
+       
+        .pricing-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .pricing-section h1 {
+            color: #ffc107; /* Título amarillo */
+            margin-bottom: 70px;
+        }
+        .pricing-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .pricing-toggle span {
+            font-size: 1.2rem;
+            margin: 0 10px;
+        }
+        .pricing-toggle input[type="checkbox"] {
+            display: none;
+        }
+        .pricing-toggle input[type="checkbox"] + label {
+            cursor: pointer;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            background-color: #f0f0f0;
+            border-radius: 30px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        .pricing-toggle input[type="checkbox"] + label:before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background-color: #fff; /* Círculo blanco */
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        .pricing-toggle input[type="checkbox"]:checked + label {
+            background-color: #f0f0f0;
+        }
+        .pricing-toggle input[type="checkbox"]:checked + label:before {
+            transform: translateX(30px);
+            background-color: #fff; /* Círculo blanco */
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #292929;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px; /* Ancho ajustado */
+            min-height: 350px; /* Altura mínima ajustada */
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .card-center {
+            transform: scale(1.1);
+            min-height: 400px; /* Altura mínima mayor para tarjeta central */
+        }
+        .card-center:hover {
+            transform: scale(1.15);
+        }
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffc107; /* Título amarillo */
+        }
+        .card-price {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffc107; /* Precio amarillo */
+        }
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px; /* Ajuste del margen inferior para alinear los botones */
+        }
+        .card-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .card-features li:before {
+            content: '➤'; /* Icono de flecha */
+            margin-right: 10px;
+            color: #ffc107; /* Color de la flecha */
+        }
+        .card-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Ajuste del margen superior para alinear los botones */
+        }
+        .card-button {
+            text-decoration: none;
+            display: block;
+            width: 90%; /* Botón más angosto */
+            padding: 12px; /* Tamaño del padding ajustado */
+            background-color: #ffc107; /* Botón amarillo */
+            color: #1e1e1e;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .card-button:hover {
+            background-color: #e0a800; /* Amarillo oscuro en hover */
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+                min-height: auto; /* Ajuste en pantallas pequeñas */
+            }
+        }
+    </style>
+
+<div class="pricing-section">
+    <h1>Nuestros Planes de Diseño Web</h1>
+    <!-- <div class="pricing-toggle">
+        <span>Anual</span>
+        <input type="checkbox" id="toggle" />
+        <label for="toggle"></label>
+        <span>Mensual</span>
+    </div> -->
+    <div class="cards">
+        <div class="card">
+            <div class="card-title">Landing Page</div>
+            <div class="card-price" id="price-basic">$499.99</div>
+            <ul class="card-features">
+                <li>Diseño Personalizado</li>
+                <li>Optimización SEO Básica</li>
+                <li>Responsive y Adaptable</li>
+                <li>Soporte Básico (1 mes)</li>
+            </ul>
+            <div class="card-button-container">
+                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
+        </div>
+        <div class="card card-center">
+            <div class="card-title">Web Corporativa</div>
+            <div class="card-price" id="price-pro">$999.99</div>
+            <ul class="card-features">
+                <li>Diseño Personalizado</li>
+                <li>Optimización SEO Avanzada</li>
+                <li>Secciones Ilimitadas</li>
+                <li>Integración con Redes Sociales</li>
+                <li>Soporte Completo (3 meses)</li>
+            </ul>
+            <div class="card-button-container">
+                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">E-commerce</div>
+            <div class="card-price" id="price-master">$1999.99</div>
+            <ul class="card-features">
+                <li>Diseño Personalizado</li>
+                <li>Optimización SEO Avanzada</li>
+                <li>Funcionalidad de Tienda Online</li>
+                <li>Integración de Pasarelas de Pago</li>
+                <li>Soporte Completo (6 meses)</li>
+            </ul>
+            <div class="card-button-container">
+                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Comentado el toggle ya que solo se ofrece un único pago por el producto completo
+    /*
+    const toggle = document.getElementById('toggle');
+    const priceBasic = document.getElementById('price-basic');
+    const pricePro = document.getElementById('price-pro');
+    const priceMaster = document.getElementById('price-master');
+
+    toggle.addEventListener('change', function () {
+        if (toggle.checked) {
+            priceBasic.textContent = '$49.99';
+            pricePro.textContent = '$99.99';
+            priceMaster.textContent = '$199.99';
+        } else {
+            priceBasic.textContent = '$499.99';
+            pricePro.textContent = '$999.99';
+            priceMaster.textContent = '$1999.99';
+        }
+    });
+    */
+</script>
+
+</body>
+</html>

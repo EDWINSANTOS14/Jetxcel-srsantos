@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Servicios Jetxcel s.a.s</title>
+    <link rel="icon" href="pixelcut-export (2).png" style="border-radius: 50%;" type="image/png">
+    <link rel="stylesheet" href="estilo.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin=""> -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="wsp.css">
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <a href="https://api.whatsapp.com/send?phone=573115310226&text=Hola%20Santos" class="btn-wsp"id="btnWsp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+	</a>
+    <script>
+        window.onload = function() {
+            document.querySelector('.btn-wsp').classList.add('show');
+        };
+      </script>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a  href="#">
+                    <h1 class="nav_titulo">JETXCEL S.A.S</h1>
+                    
+                </a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="nosotros.html" onclick="seleccionar()">NOSOTROS</a></li>
+                    <li><a href="servicios.html" onclick="seleccionar()">SERVICIOS</a></li>
+                    <!-- <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li> -->
+                    <li><a href="contacto.html" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+<!-- SECCION PORTFOLIO -->
+<section id="portfolio" class="portfolio">
+    <div class="contenido-seccion">
+        <h2 class="portfolio-titulo">SERVICIOS JETXCEL SAS</h2>
+        <div class="galeria">
+            <a class="proyecto-link" href="desarrollo-software.html">
+                <div class="proyecto">
+                    <img src="desarrollo-software.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Desarrollo Software</h3>
+                        <p>Jetxcel s.a.s</p>
+                    </div>
+                    <div class="titulo-servicio">Desarrollo Software</div>
+                </div>
+            </a>  
+            <a class="proyecto-link" href="desarrollo-apps-movil.html">
+                <div class="proyecto">
+                    <img src="reaccionar-concepto-desarrollo-aplicaciones-moviles-nativas-ilustracion-vectorial-estilo-plano-moder.png" alt="">
+                    <div class="overlay">
+                        <h3>Desarrollo Apps Moviles </h3>
+                        <p>Jetxcel s.a.s</p>
+                    </div>
+                    <div class="titulo-servicio">Desarrollo Apps Moviles</div>
+                </div>
+            </a>
+            <a class="proyecto-link" href="diseño-grafico.html">
+                <div class="proyecto">
+                    <img src="img/p3.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Diseño Grafico</h3>
+                        <p>Jetxcel s.a.s</p>
+                    </div>
+                    <div class="titulo-servicio">Diseño Grafico</div>
+                </div>
+            </a>
+            <a class="proyecto-link" href="cursos-ofimatica.html">
+                <div class="proyecto">
+                    <img src="para-qué-sirve-la-ofimática.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Cursos de ofimatica</h3>
+                        <p>Jetxcel s.a.s</p>
+                    </div>
+                    <div class="titulo-servicio">Cursos de ofimatica</div>
+                </div>
+            </a>
+            <a class="proyecto-link" href="diseño_web.html">
+                <div class="proyecto">
+                    <img src="img/p5.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Desarrollo web</h3>
+                        <p>Jetxcel s.a.s</p>
+                    </div>
+                    <div class="titulo-servicio">Desarrollo web</div>
+                </div>
+            </a>
+            <a class="proyecto-link" href="automatizacion-proyectos.html">
+                <div class="proyecto">
+                    <img src="img/p6.jpg" alt="">
+                    <div class="overlay">
+                        <h3>Automatización De Proyectos</h3>
+                        <p>Jetxcel s.a.s</p>
+                    </div>
+                    <div class="titulo-servicio">Automatización De Proyectos</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    
+    <style>
+        .map-container {
+        position: relative;
+        width: calc(100% - 20px); /* Ajusta el ancho restando 40px para márgenes laterales */
+        padding-bottom: 56.25%; /* Ratio 16:9 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 10px auto; /* Centramos el contenedor con márgenes automáticos */
+    }
+    
+    .map-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    
+    @media (min-width: 768px) {
+        .map-container {
+            width: 550px; /* Ancho fijo para pantallas más grandes */
+            height: 485px; /* Altura fija para pantallas más grandes */
+            padding-bottom: 0;
+            margin: 0 auto;
+        }
+    }
+    .p_copyright{
+        font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+    
+    }
+    .footer_info {
+        font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+    }
+    
+    .redes a i {
+        font-size: 24px; /* Tamaño de los iconos por defecto */
+    }
+    hr{
+        width: 70%;
+        margin: auto; 
+        margin-bottom: 10px;
+    }
+    .nav_titulo{
+        font-size: 40px; 
+        color: #FDD01C;
+    }
+    
+    
+    @media (max-width: 767px) {
+        .footer_info  {
+            font-size: 15px; /* Tamaño de letra reducido para dispositivos móviles */
+        }
+        .p_copyright{
+        font-size: 15px; /* Tamaño de letra por defecto para escritorio */
+    
+    }
+    
+        .redes a i {
+            font-size: 20px; /* Tamaño de los iconos reducido para dispositivos móviles */
+        }
+    
+        hr {
+            width: 100%; /* Ajusta el ancho del hr para dispositivos móviles */
+            margin: auto; 
+            margin-bottom: 10px;
+        }
+    
+        .footer p {
+            font-size: 14px; /* Ajusta el tamaño de letra del párrafo del copyright */
+        }
+        .nav_titulo{
+        font-size: 30px; 
+        color: #FDD01C;
+    }
+    
+    }
+    
+    
+        </style>
+        <footer style="background-color: #1e2326;" >
+            <a href="#portfolio" class="arriba">
+                <i class="fa-solid fa-angles-up"></i>
+            </a>
+            
+            <div class="contact-info">
+                <div class="redes">
+                    <a href="https://www.facebook.com/people/Jetxcel-SAS/100093263952966/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/jetxcel_sas/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    
+                </div>
+                <hr>
+                <p class="footer_info">Tame-Arauca</p>
+                <p class="footer_info"><strong style="color: #FDD01C;">Whatsapp:</strong> +57 314 3594424</p>
+                <p class="footer_info"><strong style="color: #FDD01C;">Correo:</strong> atencionalcliente@jetxcel.com</p>
+                <br>
+                <p class="p_copyright">©2024 Jetxcel S.A.S.</p>
+                
+            </div>
+           
+        </footer>
+
+    <script src="script.js"></script>
+      <!--=============== SWIPER JS ===============-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+</body>
+</html>

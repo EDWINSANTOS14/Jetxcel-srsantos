@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>JETXCEL S.A.S</title>
+    <link rel="icon" href="pixelcut-export (2).png" style="border-radius: 50%;" type="image/png">
+    <link rel="stylesheet" href="estilo.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin=""> -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="wsp.css">
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <a href="https://api.whatsapp.com/send?phone=573115310226&text=Hola%20Santos" class="btn-wsp"id="btnWsp" target="_blank">
+	    <i class="fa-brands fa-whatsapp"></i>
+	</a>
+    <script>
+        window.onload = function() {
+            document.querySelector('.btn-wsp').classList.add('show');
+        };
+      </script>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a  href="#">
+                    <h1 class="nav_titulo">JETXCEL S.A.S</h1>
+                    
+                </a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="nosotros.html" onclick="seleccionar()">NOSOTROS</a></li>
+                    <li><a href="servicios.html" onclick="seleccionar()">SERVICIOS</a></li>
+                    <!-- <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li> -->
+                    <li><a href="contacto.html" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+
+
+<!-- SECCION SOBRE MI -->
+<section style="background-color: #1e2326;" id="sobremi" class="sobremi">
+    <div class="contenido-seccion">
+        <h2 style="font-size: 30px; color: #FDD01C; text-align: center; margin-top: 25px;">Diseño de Páginas Web</h2>
+        <p style="text-align: justify; color: white; margin-bottom: 20px;">
+            En nuestra empresa de desarrollo de software ubicada en Tame, Arauca, nos especializamos en el diseño y desarrollo de páginas web que combinan atractivo visual con funcionalidad superior. En la era digital, sabemos que el primer impacto cuenta: un visitante decide en solo segundos si un sitio web es profesional y confiable. Por eso, nos aseguramos de que cada página que diseñamos no solo sea estéticamente agradable, sino también efectiva en su propósito.
+        </p>
+        
+        <h3 style="font-size: 24px; color: #FDD01C; text-align: left; margin-top: 20px; margin-bottom: 15px;">¿Qué hace que un diseño sea bueno?</h3>
+        <p style="text-align: justify; color: white; margin-bottom: 20px; ">
+            Un buen diseño va más allá de la apariencia. Nos enfocamos en crear sitios web con un gran atractivo visual que también sean funcionales. Esto incluye tiempos de carga rápidos, botones de acción en lugares intuitivos, una estructura organizada y una navegación sencilla. Utilizamos las últimas tecnologías para garantizar que tu sitio no solo se vea bien hoy, sino que también esté preparado para el futuro.
+        </p>
+
+        <h3 style="font-size: 24px; color: #FDD01C; text-align: left; margin-top: 20px;margin-bottom: 15px;">Responsive Web Design</h3>
+        <p style="text-align: justify; color: white; margin-bottom: 20px;">
+            Desde 2015, el diseño web responsivo es crucial para el éxito en los resultados de búsqueda, especialmente en dispositivos móviles. En nuestra empresa en Tame, Arauca, utilizamos herramientas avanzadas para garantizar que tu sitio web sea completamente adaptable y ofrezca una experiencia de usuario óptima en computadoras, tabletas y teléfonos inteligentes.
+        </p>
+
+        <h3 style="font-size: 24px; color: #FDD01C; text-align: left; margin-top: 20px;margin-bottom: 15px;">Diseño de Logo, Fotografía y Videos</h3>
+        <p style="text-align: justify; color: white; margin-bottom: 20px;">
+            Un logo distintivo y contenido visual de alta calidad son esenciales para el éxito de tu sitio web y marca. Nuestro equipo en Tame, Arauca, te ayuda a crear una imagen corporativa memorable, con fotografías y videos que reflejen profesionalismo y resalten la esencia de tu empresa. Esto no solo mejora la percepción de tu marca, sino que también fortalece tu presencia en línea.
+        </p>
+
+        <h3 style="font-size: 24px; color: #FDD01C; text-align: left; margin-top: 20px;margin-bottom: 15px;">Colaboración a Nivel Nacional e Internacional</h3>
+        <p style="text-align: justify; color: white;">
+            Aunque nuestra base está en Tame, Arauca, trabajamos con clientes a nivel nacional e internacional. La tecnología nos permite mantener una comunicación fluida y un soporte eficiente, sin importar la distancia. Estamos comprometidos con ofrecer un servicio de alta calidad y una atención personalizada a todos nuestros clientes, garantizando que recibas el mejor soporte sin importar dónde te encuentres.
+        </p>
+    </div>
+</section>
+<section style="background-color: #252A2E;" id="sobremi" class="sobremi">
+    <style>
+        .pricing-section {
+            text-align: center;
+            padding: 0px 20px;
+        }
+        .pricing-section h1 {
+            color: #ffc107; /* Título amarillo */
+            margin-bottom: 50px;
+        }
+        .pricing-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .pricing-toggle span {
+            font-size: 1.2rem;
+            margin: 0 10px;
+        }
+        .pricing-toggle input[type="checkbox"] {
+            display: none;
+        }
+        .pricing-toggle input[type="checkbox"] + label {
+            cursor: pointer;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            background-color: #f0f0f0;
+            border-radius: 30px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        .pricing-toggle input[type="checkbox"] + label:before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background-color: #fff; /* Círculo blanco */
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        .pricing-toggle input[type="checkbox"]:checked + label {
+            background-color: #f0f0f0;
+        }
+        .pricing-toggle input[type="checkbox"]:checked + label:before {
+            transform: translateX(30px);
+            background-color: #fff; /* Círculo blanco */
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: #1e2326;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px; /* Ancho ajustado */
+            min-height: 400px; /* Altura mínima ajustada */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .card-center {
+            transform: scale(1.05);
+        }
+        .card-center:hover {
+            transform: scale(1.1);
+        }
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffc107; /* Título amarillo */
+        }
+        .card-price {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffc107; /* Precio amarillo */
+        }
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px; /* Ajuste del margen inferior para alinear los botones */
+        }
+        .card-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .card-features li:before {
+            content: '➤'; /* Icono de flecha */
+            margin-right: 10px;
+            color: #ffc107; /* Color de la flecha */
+        }
+        .card-button-container {
+            display: flex;
+            justify-content: center;
+        }
+        .card-button {
+            text-decoration: none;
+            display: block;
+            width: 90%; /* Botón más angosto */
+            padding: 12px; /* Tamaño del padding ajustado */
+            background-color: #ffc107; /* Botón amarillo */
+            color: #1e1e1e;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .card-button:hover {
+            background-color: #e0a800; /* Amarillo oscuro en hover */
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+                min-height: auto; /* Ajuste en pantallas pequeñas */
+            }
+        }
+    </style>
+
+    <div class="pricing-section">
+        <h2 style="font-size: 30px;color: #FDD01C; text-align: center;margin-bottom: 25px;">Nuestros Planes de Diseño Web</h2>
+        <!-- <div class="pricing-toggle">
+            <span>Anual</span>
+            <input type="checkbox" id="toggle" />
+            <label for="toggle"></label>
+            <span>Mensual</span>
+        </div> -->
+        <div class="cards">
+            <div class="card">
+                <div class="card-title">Landing Page</div>
+                <div class="card-price" id="price-basic">$499.99</div>
+                <ul class="card-features">
+                    <li>Diseño Personalizado</li>
+                    <li>Optimización SEO Básica</li>
+                    <li>Responsive y Adaptable</li>
+                    <li>Soporte Básico (1 mes)</li>
+                </ul>
+                <div class="card-button-container">
+                    <a href="#" class="card-button">MÁS INFORMACIÓN</a>
+                </div>
+            </div>
+            <div class="card card-center">
+                <div class="card-title">Web Corporativa</div>
+                <div class="card-price" id="price-pro">$999.99</div>
+                <ul class="card-features">
+                    <li>Diseño Personalizado</li>
+                    <li>Optimización SEO Avanzada</li>
+                    <li>Secciones Ilimitadas</li>
+                    <li>Integración con Redes Sociales</li>
+                    <li>Soporte Completo (3 meses)</li>
+                </ul>
+                <div class="card-button-container">
+                    <a href="#" class="card-button">MÁS INFORMACIÓN</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">E-commerce</div>
+                <div class="card-price" id="price-master">$1999.99</div>
+                <ul class="card-features">
+                    <li>Diseño Personalizado</li>
+                    <li>Optimización SEO Avanzada</li>
+                    <li>Funcionalidad de Tienda Online</li>
+                    <li>Integración de Pasarelas de Pago</li>
+                    <li>Soporte Completo (6 meses)</li>
+                </ul>
+                <div class="card-button-container">
+                    <a href="#" class="card-button">MÁS INFORMACIÓN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Comentado el toggle ya que solo se ofrece un único pago por el producto completo
+        /*
+        const toggle = document.getElementById('toggle');
+        const priceBasic = document.getElementById('price-basic');
+        const pricePro = document.getElementById('price-pro');
+        const priceMaster = document.getElementById('price-master');
+
+        toggle.addEventListener('change', function () {
+            if (toggle.checked) {
+                priceBasic.textContent = '$49.99';
+                pricePro.textContent = '$99.99';
+                priceMaster.textContent = '$199.99';
+            } else {
+                priceBasic.textContent = '$499.99';
+                pricePro.textContent = '$999.99';
+                priceMaster.textContent = '$1999.99';
+            }
+        });
+        */
+    </script>
+</section>
+
+
+   <!-- SECCION SOBRE MI -->
+<section style="background-color: #1e2326;" id="sobremi" class="sobremi">
+    <div class="contenido-seccion">
+        <h2 ">HABLA CON NOSOTROS</h2>
+        <p style="text-align: center;"> ¿Tiene alguna pregunta? Siempre estamos abiertos a hablar sobre su negocio, <br>nuevos proyectos, oportunidades creativas y cómo podemos ayudarlo.</p>
+
+        <div class="fila">
+            <!-- intereses -->
+             <a style="margin: auto;" href="contacto.html">
+                <button  type="submit" >PONERSE EN CONTACTO <i class="fa-solid fa-paper-plane"></i></button>
+             </a>
+           
+        </div>
+    </div>
+</section>
+
+
+    
+<style>
+    .map-container {
+    position: relative;
+    width: calc(100% - 20px); /* Ajusta el ancho restando 40px para márgenes laterales */
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px auto; /* Centramos el contenedor con márgenes automáticos */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (min-width: 768px) {
+    .map-container {
+        width: 550px; /* Ancho fijo para pantallas más grandes */
+        height: 485px; /* Altura fija para pantallas más grandes */
+        padding-bottom: 0;
+        margin: 0 auto;
+    }
+}
+.p_copyright{
+    font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+
+}
+.footer_info {
+    font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+}
+
+.redes a i {
+    font-size: 24px; /* Tamaño de los iconos por defecto */
+}
+hr{
+    width: 70%;
+    margin: auto; 
+    margin-bottom: 10px;
+}
+.nav_titulo{
+    font-size: 40px; 
+    color: #FDD01C;
+}
+
+
+@media (max-width: 767px) {
+    .footer_info  {
+        font-size: 15px; /* Tamaño de letra reducido para dispositivos móviles */
+    }
+    .p_copyright{
+    font-size: 15px; /* Tamaño de letra por defecto para escritorio */
+
+}
+
+    .redes a i {
+        font-size: 20px; /* Tamaño de los iconos reducido para dispositivos móviles */
+    }
+
+    hr {
+        width: 100%; /* Ajusta el ancho del hr para dispositivos móviles */
+        margin: auto; 
+        margin-bottom: 10px;
+    }
+
+    .footer p {
+        font-size: 14px; /* Ajusta el tamaño de letra del párrafo del copyright */
+    }
+    .nav_titulo{
+    font-size: 30px; 
+    color: #FDD01C;
+}
+
+}
+
+
+    </style>
+    <footer >
+        <a href="#sobremi" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        
+        <div class="contact-info">
+            <div class="redes">
+                <a href="https://www.facebook.com/people/Jetxcel-SAS/100093263952966/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/jetxcel_sas/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                
+            </div>
+            <hr>
+            <p class="footer_info">Tame-Arauca</p>
+            <p class="footer_info"><strong style="color: #FDD01C;">Whatsapp:</strong> +57 314 3594424</p>
+            <p class="footer_info"><strong style="color: #FDD01C;">Correo:</strong> atencionalcliente@jetxcel.com</p>
+            <br>
+            <p class="p_copyright">©2024 Jetxcel S.A.S.</p>
+            
+        </div>
+       
+    </footer>
+
+    <script src="script.js"></script>
+      <!--=============== SWIPER JS ===============-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+</body>
+</html>

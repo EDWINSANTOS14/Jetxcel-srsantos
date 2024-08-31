@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Botón Flotante - WhatsApp</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @keyframes zoomIn {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+    .btn-wsp {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 25px;
+        right: 25px;
+        background: #25d366;
+        color: #FFF;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 35px;
+        line-height: 60px;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        transition: all 300ms ease;
+        opacity: 0;
+        transform: scale(0);
+        visibility: hidden;
+    }
+
+    .btn-wsp.show {
+        animation: zoomIn 0.5s forwards, pulse 1.5s infinite;
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .btn-wsp:hover {
+        background: #20ba5a;
+        animation: none;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        .btn-wsp {
+            width: 63px;
+            height: 63px;
+            line-height: 63px;
+            font-size: 35px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <a href="https://api.whatsapp.com/send?phone=+51987654321" class="btn-wsp show" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    window.onload = function() {
+        document.querySelector('.btn-wsp').classList.add('show');
+    };
+  </script>
+</body>
+</html>

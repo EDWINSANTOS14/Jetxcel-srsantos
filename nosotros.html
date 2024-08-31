@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>JETXCEL S.A.S</title>
+    <link rel="icon" href="pixelcut-export (2).png" style="border-radius: 50%;" type="image/png">
+    <link rel="stylesheet" href="estilo.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin=""> -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="wsp.css">
+    <!--Icon-Font-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <a href="https://api.whatsapp.com/send?phone=573115310226&text=Hola%20Santos" class="btn-wsp"id="btnWsp" target="_blank">
+	    <i class="fa-brands fa-whatsapp"></i>
+	</a>
+    <script>
+        window.onload = function() {
+            document.querySelector('.btn-wsp').classList.add('show');
+        };
+      </script>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a  href="#">
+                    <h1 class="nav_titulo">JETXCEL S.A.S</h1>
+                    
+                </a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="nosotros.html" onclick="seleccionar()">NOSOTROS</a></li>
+                    <li><a href="servicios.html" onclick="seleccionar()">SERVICIOS</a></li>
+                    <!-- <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li> -->
+                    <li><a href="contacto.html" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+
+<style>
+   /* Estilos para la sección de Misión y Visión */
+.mision-vision, .sobremi .fila {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+   margin-top: 30px;
+    align-items: stretch; /* Asegura que todos los elementos tengan la misma altura */
+}
+
+/* Estilos para el contenedor de texto y la imagen */
+.sobremi .col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Estilos para el párrafo */
+.sobremi .col p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    color: #fff;
+    margin: 20px 0;
+    text-align: justify;
+}
+
+/* Estilos para la imagen alineada con bordes redondeados */
+.img-alineada {
+    width: 100%;
+    max-width: 500px;
+    height: 230px;
+    border-radius: 15px; /* Bordes redondeados similares a una card */
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega una sombra para darle más estilo */
+    margin-top: 30px;
+}
+
+/* Estilos para la tarjeta contenedora */
+.mision-vision .card {
+    width: 100%;
+    max-width: 500px;
+    background: #1e2326; /* Fondo oscuro para resaltar el contenido */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px; /* Establece una altura mínima para uniformidad */
+}
+
+.mision-vision .card h3 {
+    color: #FDD01C; /* Color de encabezado */
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-family: 'Righteous', sans-serif;
+}
+
+.mision-vision .card p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto; /* Para centrar el contenido de los párrafos */
+    flex-grow: 1; /* Permite que el contenido crezca uniformemente */
+}
+
+/* Efecto hover para la tarjeta */
+.mision-vision .card:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsivo para dispositivos móviles */
+@media (max-width: 768px) {
+    .mision-vision, .sobremi .fila {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mision-vision .card, .sobremi .col {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mision-vision .card h3 {
+        font-size: 24px; /* Ajuste del tamaño del encabezado */
+    }
+
+    .mision-vision .card p {
+        font-size: 16px; /* Ajuste del tamaño del texto */
+    }
+
+    .img-alineada {
+        max-width: 100%;
+    }
+}
+
+</style>
+
+<!-- SECCION SOBRE MI -->
+<section id="sobremi" class="sobremi">
+    <div class="contenido-seccion">
+        <h2>NOSOTROS</h2>
+        <div class="fila">
+            <!-- datos personales -->
+            <div class="col">
+                <p>
+                    Somos una empresa líder en el <span style="color: #FDD01C;">desarrollo de software,</span> dedicada a ofrecer soluciones tecnológicas innovadoras y personalizadas. Nuestro equipo de expertos altamente capacitados en programación, diseño de interfaces y gestión de proyectos, se enfoca en brindar a nuestros clientes las herramientas necesarias para optimizar sus procesos y alcanzar el éxito en el entorno digital.
+                </p>
+            </div>
+
+            <!-- imagen alineada con el texto -->
+            <div class="col">
+                <img src="Imagen-de-WhatsApp-2023-08-30-a-las-15.04.28.jpg" alt="Imagen de Nosotros" class="img-alineada">
+            </div>
+        </div>
+
+        <!-- Misión y Visión -->
+        <div class="mision-vision">
+            <div class="card">
+                <h3>MISIÓN</h3>
+                <p>Proporcionar soluciones tecnológicas de vanguardia a nuestros clientes, a través del desarrollo de software innovador y personalizado. Nos esforzamos por entender y satisfacer las necesidades de nuestros clientes, ofreciendo productos de calidad.</p>
+            </div>
+            <div class="card">
+                <h3>VISIÓN</h3>
+                <p>Ser líderes en el desarrollo de software a nivel nacional e internacional, y contribuir activamente a la transformación tecnológica de la ciudad de Tame, buscando convertirla en el Silicon Valley de Colombia.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+   <!-- SECCION SOBRE MI -->
+<section style="background-color: #1e2326;" id="sobremi" class="sobremi">
+    <div class="contenido-seccion">
+        <h2>HABLA CON NOSOTROS</h2>
+        <p style="text-align: center;"> ¿Tiene alguna pregunta? Siempre estamos abiertos a hablar sobre su negocio, <br>nuevos proyectos, oportunidades creativas y cómo podemos ayudarlo.</p>
+
+        <div class="fila">
+            <!-- intereses -->
+             <a style="margin: auto;" href="contacto.html">
+                <button  type="submit" >PONERSE EN CONTACTO <i class="fa-solid fa-paper-plane"></i></button>
+             </a>
+           
+        </div>
+    </div>
+</section>
+
+
+
+    
+    <style>
+    .map-container {
+    position: relative;
+    width: calc(100% - 20px); /* Ajusta el ancho restando 40px para márgenes laterales */
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px auto; /* Centramos el contenedor con márgenes automáticos */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (min-width: 768px) {
+    .map-container {
+        width: 550px; /* Ancho fijo para pantallas más grandes */
+        height: 485px; /* Altura fija para pantallas más grandes */
+        padding-bottom: 0;
+        margin: 0 auto;
+    }
+}
+.p_copyright{
+    font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+
+}
+.footer_info {
+    font-size: 20px; /* Tamaño de letra por defecto para escritorio */
+}
+
+.redes a i {
+    font-size: 24px; /* Tamaño de los iconos por defecto */
+}
+hr{
+    width: 70%;
+    margin: auto; 
+    margin-bottom: 10px;
+}
+.nav_titulo{
+    font-size: 40px; 
+    color: #FDD01C;
+}
+
+
+@media (max-width: 767px) {
+    .footer_info  {
+        font-size: 15px; /* Tamaño de letra reducido para dispositivos móviles */
+    }
+    .p_copyright{
+    font-size: 15px; /* Tamaño de letra por defecto para escritorio */
+
+}
+
+    .redes a i {
+        font-size: 20px; /* Tamaño de los iconos reducido para dispositivos móviles */
+    }
+
+    hr {
+        width: 100%; /* Ajusta el ancho del hr para dispositivos móviles */
+        margin: auto; 
+        margin-bottom: 10px;
+    }
+
+    .footer p {
+        font-size: 14px; /* Ajusta el tamaño de letra del párrafo del copyright */
+    }
+    .nav_titulo{
+    font-size: 30px; 
+    color: #FDD01C;
+}
+
+}
+
+
+    </style>
+    <footer >
+        <a href="#sobremi" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        
+        <div class="contact-info">
+            <div class="redes">
+                <a href="https://www.facebook.com/people/Jetxcel-SAS/100093263952966/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/jetxcel_sas/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                
+            </div>
+            <hr>
+            <p class="footer_info">Tame-Arauca</p>
+            <p class="footer_info"><strong style="color: #FDD01C;">Whatsapp:</strong> +57 314 3594424</p>
+            <p class="footer_info"><strong style="color: #FDD01C;">Correo:</strong> atencionalcliente@jetxcel.com</p>
+            <br>
+            <p class="p_copyright">©2024 Jetxcel S.A.S.</p>
+            
+        </div>
+       
+    </footer>
+    
+
+    <script src="script.js"></script>
+      <!--=============== SWIPER JS ===============-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+</body>
+</html>
