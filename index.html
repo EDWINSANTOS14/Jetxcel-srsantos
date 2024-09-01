@@ -39,7 +39,7 @@
         
 </head>
 <body>
-    <a href="https://api.whatsapp.com/send?phone=573115310226&text=Hola%20Santos" class="btn-wsp"id="btnWsp" target="_blank">
+    <a href="https://wa.link/e4j9bq" class="btn-wsp"id="btnWsp" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
 	</a>
     
@@ -48,51 +48,86 @@
         document.querySelector('.btn-wsp').classList.add('show');
     };
   </script>
-    <!-- MENU ENCABEZADO -->
-    <div class="contenedor-header">
-        <header>
-            <div class="logo">
-                <a  href="#">
-                    <h1 class="nav_titulo">JETXCEL S.A.S</h1>
-                    
-                </a>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
-                    <li><a href="nosotros.html" onclick="seleccionar()">NOSOTROS</a></li>
-                    <li><a href="servicios.html" onclick="seleccionar()">SERVICIOS</a></li>
-                    <!-- <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li> -->
-                    <li><a href="contacto.html" onclick="seleccionar()">CONTACTO</a></li>
-                </ul>
-            </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
-    </div>
+<!-- MENU ENCABEZADO -->
+<div class="contenedor-header">
+    <header>
+        <div class="logo">
+            <a href="#">
+                <h1 class="nav_titulo">JETXCEL S.A.S</h1>
+            </a>
+        </div>
+        <nav id="nav">
+            <span class="close-btn" onclick="closeMenu()"><i class="fa-solid fa-x"></i></span>
+            <ul>
+                <li><a href="index.html" onclick="seleccionar()">INICIO</a></li>
+                <li><a href="nosotros.html" onclick="seleccionar()">NOSOTROS</a></li>
+                <li><a href="servicios.html" onclick="seleccionar()">SERVICIOS</a></li>
+                <li><a href="contacto.html" onclick="seleccionar()">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div class="nav-responsive" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+</div>
+
+<script>
+    // Alternar el menú
+    function toggleMenu() {
+        const menu = document.querySelector('nav');
+        const navResponsive = document.querySelector('.nav-responsive');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        // Alternar la clase 'responsive' del menú
+        menu.classList.toggle('responsive');
+        navResponsive.classList.toggle('active');
+        closeBtn.style.display = menu.classList.contains('responsive') ? 'block' : 'none';
+    }
+
+    // Cerrar el menú
+    function closeMenu() {
+        const menu = document.querySelector('nav');
+        const navResponsive = document.querySelector('.nav-responsive');
+        
+        // Asegura que el menú se oculte y el ícono de menú se muestre
+        menu.classList.remove('responsive');
+        navResponsive.classList.remove('active');
+    }
+</script>
+
 <!-- SECCION INICIO -->
 <section id="inicio" class="inicio">
     <div class="slider">
         <div class="slides">
             <!-- Slide 1 -->
             <div class="slide">
-                <h2>DESARROLLO DE SOFTWARE</h2>
-                <hr>
-                <p>Diseño Gráfico</p>
+                <h2>DESARROLLO WEB</h2>
+                <div class="line"></div>
             </div>
             <!-- Slide 2 -->
             <div class="slide">
-                <h2>MARKETING DIGITAL</h2>
-                <hr>
-                <p>Diseño Gráfico</p>
+                <h2>SOFTWARE A MEDIDA</h2>
+                <div class="line"></div>
             </div>
             <!-- Slide 3 -->
             <div class="slide">
+                <h2>APPS MÓVILES</h2>
+                <div class="line"></div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="slide">
+                <h2>CURSOS DE OFIMÁTICA</h2>
+                <div class="line"></div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="slide">
+                <h2>DISEÑO GRÁFICO</h2>
+                <div class="line"></div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="slide">
                 <h2>AUTOMATIZACIÓN DE PROYECTOS</h2>
-                <hr>
-                <p>Diseño Gráfico</p>
+                <div class="line"></div>
             </div>
         </div>
         <!-- Navigation dots -->
@@ -100,11 +135,14 @@
             <div class="dot" onclick="currentSlide(1)"></div>
             <div class="dot" onclick="currentSlide(2)"></div>
             <div class="dot" onclick="currentSlide(3)"></div>
+            <div class="dot" onclick="currentSlide(4)"></div>
+            <div class="dot" onclick="currentSlide(5)"></div>
+            <div class="dot" onclick="currentSlide(6)"></div>
         </div>
     </div>
-
-    
 </section>
+
+
 
 
 
@@ -143,7 +181,7 @@
         <div class="cards-container">
             <div class="card">
                 <div class="card-image">
-                    <img src="Imagen-de-WhatsApp-2023-08-30-a-las-15.04.29.jpg" alt="Capacitación">
+                    <img src="assets/img/Imagen-de-WhatsApp-2023-08-30-a-las-15.04.29.jpg" alt="Capacitación">
                 </div>
                 <div class="card-content">
                     <h4>Capacitando a la futura generación</h4>
@@ -152,7 +190,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="Imagen-de-WhatsApp-2023-08-30-a-las-15.04.25.jpg" alt="Innovación">
+                    <img src="assets/img/Imagen-de-WhatsApp-2023-08-30-a-las-15.04.25.jpg" alt="Innovación">
                 </div>
                 <div class="card-content">
                     <h4>Innovación en acción</h4>
@@ -161,7 +199,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="Imagen-de-WhatsApp-2023-09-27-a-las-10.17.59.jpg" alt="Tecnología">
+                    <img src="assets/img/Imagen-de-WhatsApp-2023-09-27-a-las-10.17.59.jpg" alt="Tecnología">
                 </div>
                 <div class="card-content">
                     <h4>Impulsando el potencial de los jóvenes mediante la innovación tecnológica</h4>
@@ -170,7 +208,7 @@
             </div>
             <div class="card">
                 <div class="card-image">
-                    <img src="Imagen-de-WhatsApp-2023-08-30-a-las-15.04.29.jpg" alt="Futuro">
+                    <img src="assets/img/Imagen-de-WhatsApp-2023-08-30-a-las-15.04.29.jpg" alt="Futuro">
                 </div>
                 <div class="card-content">
                     <h4>En el camino de la innovación</h4>
@@ -187,65 +225,65 @@
     <div class="slider-unique">
         <div class="slide-track-unique">
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="genovas-llanero.png" alt="">
+                <a href="https://genovasllaneroemprendedor.com/" target="_blank">
+                    <img src="assets/img/genovas-llanero.png" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="rtt-transporte.jpg" alt="">
+                <a href="https://www.rtt.com.co/" target="_blank">
+                    <img src="assets/img/rtt-transporte.jpg" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="380877182_270197509264014_2763357982268246139_n.jpg" alt="">
+                <a href="https://latinos.com.co/" target="_blank">
+                    <img src="assets/img/380877182_270197509264014_2763357982268246139_n.jpg" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="kalu-telecomunicaciones.jpg" alt="">
+                <a href="https://www.facebook.com/kalutelecomunicaciones/" target="_blank">
+                    <img src="assets/img/kalu-telecomunicaciones.jpg" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="funmosoa.jpg" alt="">
+                <a href="https://www.facebook.com/people/Fundaci%C3%B3n-Motivos-So%C3%B1ados-por-Arauca-Funmosoa/100070022046565/" target="_blank">
+                    <img src="assets/img/funmosoa.jpg" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="inovacenter.png" alt="">
+                <a href="https://www.facebook.com/InnovaCenter.Tame/" target="_blank">
+                    <img src="assets/img/inovacenter.png" alt="">
                 </a>
             </div>
 
             <!-- Repetición de las imágenes para el efecto de scroll infinito -->
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="genovas-llanero.png" alt="">
+                <a href="https://genovasllaneroemprendedor.com/" target="_blank">
+                    <img src="assets/img/genovas-llanero.png" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="rtt-transporte.jpg" alt="">
+                <a href="https://www.rtt.com.co/" target="_blank">
+                    <img src="assets/img/rtt-transporte.jpg" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="380877182_270197509264014_2763357982268246139_n.jpg" alt="">
+                <a href="https://latinos.com.co/" target="_blank">
+                    <img src="assets/img/380877182_270197509264014_2763357982268246139_n.jpg" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="kalu-telecomunicaciones.jpg" alt="">
+                <a href="https://www.facebook.com/kalutelecomunicaciones/" target="_blank">
+                    <img src="assets/img/kalu-telecomunicaciones.jpg" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="funmosoa.jpg" alt="">
+                <a href="https://www.facebook.com/people/Fundaci%C3%B3n-Motivos-So%C3%B1ados-por-Arauca-Funmosoa/100070022046565/" target="_blank">
+                    <img src="assets/img/funmosoa.jpg" alt="">
                 </a>
             </div>
             <div class="slide-unique">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="inovacenter.png" alt="">
+                <a href="https://www.facebook.com/InnovaCenter.Tame/" target="_blank">
+                    <img src="assets/img/inovacenter.png" alt="">
                 </a>
             </div>
         </div>
@@ -256,7 +294,7 @@
 
 <section class="about-us-custom">
     <div class="content-custom">
-        <img src="Imagen de WhatsApp 2024-08-29 a las 19.04.48_9c270615.jpg" alt="Logo" class="logo-custom">
+        <img src="assets/img/Imagen de WhatsApp 2024-08-29 a las 19.04.48_9c270615.jpg" alt="Logo" class="logo-custom">
         <h1 class="about-us-title">Conozca más de nosotros</h1>
         <hr class="about-us-divider">
         <p class="about-us-subtitle">Síganos en nuestras redes</p>
@@ -316,6 +354,7 @@ hr{
     width: 70%;
     margin: auto; 
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 .nav_titulo{
     font-size: 40px; 
@@ -328,7 +367,7 @@ hr{
         font-size: 16px; /* Tamaño de letra reducido para dispositivos móviles */
     }
     .p_copyright{
-    font-size: 15px; /* Tamaño de letra por defecto para escritorio */
+    font-size: 16px; /* Tamaño de letra por defecto para escritorio */
 
 }
 
@@ -340,10 +379,11 @@ hr{
         width: 100%; /* Ajusta el ancho del hr para dispositivos móviles */
         margin: auto; 
         margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .footer p {
-        font-size: 14px; /* Ajusta el tamaño de letra del párrafo del copyright */
+        font-size: 16px; /* Ajusta el tamaño de letra del párrafo del copyright */
     }
     .nav_titulo{
     font-size: 30px; 
@@ -360,11 +400,7 @@ hr{
         </a>
         
         <div class="contact-info">
-            <div class="redes">
-                <a href="https://www.facebook.com/people/Jetxcel-SAS/100093263952966/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/jetxcel_sas/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                
-            </div>
+           
             <hr>
             <p class="footer_info">Tame-Arauca</p>
             <p class="footer_info"><strong style="color: #FDD01C;">Whatsapp:</strong> +57 314 3594424</p>
@@ -377,7 +413,9 @@ hr{
     </footer>
     
 
-    <script src="script.js"></script>
+    <script src="/assets/js/script.js">
+
+    </script>
       <!--=============== SWIPER JS ===============-->
       <script src="assets/js/swiper-bundle.min.js"></script>
 

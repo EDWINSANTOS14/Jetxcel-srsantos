@@ -16,7 +16,7 @@
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <a href="https://api.whatsapp.com/send?phone=573115310226&text=Hola%20Santos" class="btn-wsp"id="btnWsp" target="_blank">
+    <a href="https://wa.link/e4j9bq" class="btn-wsp"id="btnWsp" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
 	</a>
     <script>
@@ -24,31 +24,52 @@
             document.querySelector('.btn-wsp').classList.add('show');
         };
       </script>
-    <!-- MENU ENCABEZADO -->
-    <div class="contenedor-header">
-        <header>
-            <div class="logo">
-                <a  href="#">
-                    <h1 class="nav_titulo">JETXCEL S.A.S</h1>
-                    
-                </a>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html#inicio" onclick="seleccionar()">INICIO</a></li>
-                    <li><a href="nosotros.html" onclick="seleccionar()">NOSOTROS</a></li>
-                    <li><a href="servicios.html" onclick="seleccionar()">SERVICIOS</a></li>
-                    <!-- <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li> -->
-                    <li><a href="contacto.html" onclick="seleccionar()">CONTACTO</a></li>
-                </ul>
-            </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
-    </div>
+   <!-- MENU ENCABEZADO -->
+<div class="contenedor-header">
+    <header>
+        <div class="logo">
+            <a href="#">
+                <h1 class="nav_titulo">JETXCEL S.A.S</h1>
+            </a>
+        </div>
+        <nav id="nav">
+            <span class="close-btn" onclick="closeMenu()"><i class="fa-solid fa-x"></i></span>
+            <ul>
+                <li><a href="index.html" onclick="seleccionar()">INICIO</a></li>
+                <li><a href="nosotros.html" onclick="seleccionar()">NOSOTROS</a></li>
+                <li><a href="servicios.html" onclick="seleccionar()">SERVICIOS</a></li>
+                <li><a href="contacto.html" onclick="seleccionar()">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div class="nav-responsive" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+</div>
 
+<script>
+    // Alternar el menú
+    function toggleMenu() {
+        const menu = document.querySelector('nav');
+        const navResponsive = document.querySelector('.nav-responsive');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        // Alternar la clase 'responsive' del menú
+        menu.classList.toggle('responsive');
+        navResponsive.classList.toggle('active');
+        closeBtn.style.display = menu.classList.contains('responsive') ? 'block' : 'none';
+    }
+
+    // Cerrar el menú
+    function closeMenu() {
+        const menu = document.querySelector('nav');
+        const navResponsive = document.querySelector('.nav-responsive');
+        
+        // Asegura que el menú se oculte y el ícono de menú se muestre
+        menu.classList.remove('responsive');
+        navResponsive.classList.remove('active');
+    }
+</script>
 
 
  <!-- SECCION SOBRE SOFTWARE A MEDIDA -->
@@ -226,9 +247,9 @@
                 <li>Integración con Sistemas Existentes</li>
                 <li>Soporte Básico (3 meses)</li>
             </ul>
-            <div class="card-button-container">
+            <!-- <div class="card-button-container">
                 <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div>
+            </div> -->
         </div>
         <div class="card card-center">
             <div class="card-title">Plan Profesional</div>
@@ -239,9 +260,9 @@
                 <li>Integración con Múltiples APIs y Servicios</li>
                 <li>Soporte Avanzado (6 meses)</li>
             </ul>
-            <div class="card-button-container">
+            <!-- <div class="card-button-container">
                 <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div>
+            </div> -->
         </div>
         <div class="card">
             <div class="card-title">Plan Empresarial</div>
@@ -252,9 +273,9 @@
                 <li>Integración de Sistemas Corporativos</li>
                 <li>Soporte Completo (12 meses)</li>
             </ul>
-            <div class="card-button-container">
+            <!-- <div class="card-button-container">
                 <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
