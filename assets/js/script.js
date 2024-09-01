@@ -93,7 +93,7 @@ function currentSlide(n) {
     
     clearTimeout(slideInterval);
     slideInterval = setTimeout(showSlides, 7000); // Reiniciar el temporizador de las diapositivas
-}
+}   
 
 // SECCION DE + DE 1000 TAZAS DE CAFE
 document.addEventListener("DOMContentLoaded", function() {
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
         rootMargin: "0px",
         threshold: 0.1
     };
-
+     
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -117,4 +117,4 @@ document.addEventListener("DOMContentLoaded", function() {
     interests.forEach(interest => {
         observer.observe(interest);
     });
-});
+}); 
