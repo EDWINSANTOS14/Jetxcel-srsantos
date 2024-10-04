@@ -47,30 +47,6 @@
     </header>
 </div>
 
-<script>
-    // Alternar el menú
-    function toggleMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        const closeBtn = document.querySelector('.close-btn');
-        
-        // Alternar la clase 'responsive' del menú
-        menu.classList.toggle('responsive');
-        navResponsive.classList.toggle('active');
-        closeBtn.style.display = menu.classList.contains('responsive') ? 'block' : 'none';
-    }
-
-    // Cerrar el menú
-    function closeMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        
-        // Asegura que el menú se oculte y el ícono de menú se muestre
-        menu.classList.remove('responsive');
-        navResponsive.classList.remove('active');
-    }
-</script>
-
 
 
 <!-- SECCION SOBRE MI -->
@@ -237,15 +213,14 @@
             }
         }
     </style>
-
 <div class="pricing-section">
     <h2 style="font-size: 30px; color: #ffc107; text-align: center; margin-bottom: 25px;">Nuestros Planes de Diseño Gráfico</h2>
-   <div class="pricing-toggle">
-            <span>Anual</span>
-            <input type="checkbox" id="toggle" />
-            <label style="background-color: #696565;" for="toggle"></label>
-            <span>Mensual</span>
-        </div>     
+    <div class="pricing-toggle">
+        <span>Mensual</span>
+        <input type="checkbox" id="toggle" />
+        <label style="background-color: #696565;" for="toggle"></label>
+        <span>Anual</span>
+    </div>
     <div class="cards">
         <div class="card">
             <div class="card-title">Identidad Básica</div>
@@ -256,9 +231,9 @@
                 <li>Paleta de Colores</li>
                 <li>Entrega de Archivos en Alta Resolución</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="#" id="info-basic" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
         </div>
         <div class="card card-center">
             <div class="card-title">Identidad Completa</div>
@@ -270,9 +245,9 @@
                 <li>Diseño de Papelería Corporativa</li>
                 <li>Entrega de Archivos en Alta Resolución</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="#" id="info-pro" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
         </div>
         <div class="card">
             <div class="card-title">Diseño Promocional</div>
@@ -284,34 +259,89 @@
                 <li>Gestión de Contenido Visual</li>
                 <li>Entrega de Archivos en Alta Resolución</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="#" id="info-master" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
         </div>
     </div>
 </div>
 
-    <script>
-        // Comentado el toggle ya que solo se ofrece un único pago por el producto completo
- 
-        const toggle = document.getElementById('toggle');
-        const priceBasic = document.getElementById('price-basic');
-        const pricePro = document.getElementById('price-pro');
-        const priceMaster = document.getElementById('price-master');
+<script>
+    const toggle = document.getElementById('toggle');
+    const priceBasic = document.getElementById('price-basic');
+    const pricePro = document.getElementById('price-pro');
+    const priceMaster = document.getElementById('price-master');
+    
+    // Mensajes predeterminados
+    const messages = {
+        basic: {
+            monthly: "Hola, estoy interesado en el plan mensual de Identidad Básica.",
+            annual: "Hola, estoy interesado en el plan anual de Identidad Básica."
+        },
+        advanced: {
+            monthly: "Hola, estoy interesado en el plan mensual de Identidad Completa.",
+            annual: "Hola, estoy interesado en el plan anual de Identidad Completa."
+        },
+        professional: {
+            monthly: "Hola, estoy interesado en el plan mensual de Diseño Promocional.",
+            annual: "Hola, estoy interesado en el plan anual de Diseño Promocional."
+        }
+    };
+    
+    // Número de WhatsApp
+    const whatsappNumber = '573143594424'; // Número al que se enviarán los mensajes (sin el '+')
+    
+    // Función para redirigir a WhatsApp
+    function redirectToWhatsApp(plan) {
+        const type = toggle.checked ? 'annual' : 'monthly';
+        const message = messages[plan][type];
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+    
+    // Eventos de clic en los botones de información
+    document.getElementById('info-basic').addEventListener('click', function() {
+        redirectToWhatsApp('basic');
+    });
+    
+    document.getElementById('info-pro').addEventListener('click', function() {
+        redirectToWhatsApp('advanced');
+    });
+    
+    document.getElementById('info-master').addEventListener('click', function() {
+        redirectToWhatsApp('professional');
+    });
+    
+    // Cambia precios al cambiar el toggle
+    toggle.addEventListener('change', function () {
+        if (toggle.checked) {
+            priceBasic.textContent = '$2999.99'; // Anual
+            pricePro.textContent = '$7999.99';   // Anual
+            priceMaster.textContent = '$12999.99'; // Anual
+        } else {
+            priceBasic.textContent = '$299.99'; // Mensual
+            pricePro.textContent = '$799.99';   // Mensual
+            priceMaster.textContent = '$1299.99'; // Mensual
+        }
+    });
 
-        toggle.addEventListener('change', function () {
-            if (toggle.checked) {
-                priceBasic.textContent = '$49.99';
-                pricePro.textContent = '$99.99';
-                priceMaster.textContent = '$199.99';
-            } else {
-                priceBasic.textContent = '$499.99';
-                pricePro.textContent = '$999.99';
-                priceMaster.textContent = '$1999.99';
-            }
-        });
-   
-    </script>
+    // Inicializa los precios de acuerdo al estado del toggle
+    function updatePrices() {
+        if (toggle.checked) {
+            priceBasic.textContent = '$2999.99'; // Anual
+            pricePro.textContent = '$7999.99';   // Anual
+            priceMaster.textContent = '$12999.99'; // Anual
+        } else {
+            priceBasic.textContent = '$299.99'; // Mensual
+            pricePro.textContent = '$799.99';   // Mensual
+            priceMaster.textContent = '$1299.99'; // Mensual
+        }
+    }
+
+    toggle.addEventListener('change', updatePrices);
+    updatePrices(); // Llama a la función para establecer los precios al cargar
+</script>
+
 </section>
 
 
@@ -436,7 +466,7 @@ hr{
        
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
       <!--=============== SWIPER JS ===============-->
       <script src="assets/js/swiper-bundle.min.js"></script>
 

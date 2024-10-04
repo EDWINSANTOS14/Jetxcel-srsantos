@@ -47,31 +47,6 @@
     </header>
 </div>
 
-<script>
-    // Alternar el menú
-    function toggleMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        const closeBtn = document.querySelector('.close-btn');
-        
-        // Alternar la clase 'responsive' del menú
-        menu.classList.toggle('responsive');
-        navResponsive.classList.toggle('active');
-        closeBtn.style.display = menu.classList.contains('responsive') ? 'block' : 'none';
-    }
-
-    // Cerrar el menú
-    function closeMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        
-        // Asegura que el menú se oculte y el ícono de menú se muestre
-        menu.classList.remove('responsive');
-        navResponsive.classList.remove('active');
-    }
-</script>
-
-
 
 <!-- SECCION SOBRE MI -->
 <section style="background-color: #1e2326;" id="sobremi" class="sobremi">
@@ -241,7 +216,6 @@
             }
         }
     </style>
-
 <div class="pricing-section">
     <h2 style="font-size: 30px;color: #FDD01C; text-align: center;margin-bottom: 25px;">Nuestros Planes de Desarrollo de Aplicaciones Móviles</h2>
     <!-- <div class="pricing-toggle">
@@ -261,9 +235,9 @@
                 <li>Integración de API Básica</li>
                 <li>Soporte Básico (1 mes)</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="https://wa.me/573143594424?text=Hola,%20estoy%20interesado%20en%20la%20Aplicación%20Básica%20de%20Desarrollo%20de%20Aplicaciones%20Móviles." target="_blank" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
         </div>
         <div class="card card-center">
             <div class="card-title">Aplicación Avanzada</div>
@@ -276,9 +250,9 @@
                 <li>Integración con Bases de Datos</li>
                 <li>Soporte Completo (3 meses)</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="https://wa.me/573143594424?text=Hola,%20estoy%20interesado%20en%20la%20Aplicación%20Avanzada%20de%20Desarrollo%20de%20Aplicaciones%20Móviles." target="_blank" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
         </div>
         <div class="card">
             <div class="card-title">Aplicación Completa</div>
@@ -291,12 +265,13 @@
                 <li>Soporte Premium (6 meses)</li>
                 <li>Monetización y Publicidad</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="https://wa.me/573143594424?text=Hola,%20estoy%20interesado%20en%20la%20Aplicación%20Completa%20de%20Desarrollo%20de%20Aplicaciones%20Móviles." target="_blank" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
         </div>
     </div>
 </div>
+
 
     <script>
         // Comentado el toggle ya que solo se ofrece un único pago por el producto completo
@@ -442,7 +417,7 @@ hr{
         </div>
        
     </footer>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
       <!--=============== SWIPER JS ===============-->
       <script src="assets/js/swiper-bundle.min.js"></script>
 

@@ -72,61 +72,116 @@
 </div>
 
 <script>
-    // Alternar el menú
-    function toggleMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        const closeBtn = document.querySelector('.close-btn');
-        
+  // Alternar el menú
+function toggleMenu() {
+    const menu = document.querySelector('nav');
+    const navResponsive = document.querySelector('.nav-responsive');
+    const closeBtn = document.querySelector('.close-btn');
+    
+    // Solo activar el menú en pantallas móviles
+    if (window.innerWidth <= 768) {
         // Alternar la clase 'responsive' del menú
         menu.classList.toggle('responsive');
         navResponsive.classList.toggle('active');
+        
+        // Mostrar el botón de cerrar ('x') si el menú está abierto
         closeBtn.style.display = menu.classList.contains('responsive') ? 'block' : 'none';
     }
+}
 
-    // Cerrar el menú
-    function closeMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        
-        // Asegura que el menú se oculte y el ícono de menú se muestre
+// Cerrar el menú
+function closeMenu() {
+    const menu = document.querySelector('nav');
+    const navResponsive = document.querySelector('.nav-responsive');
+    const closeBtn = document.querySelector('.close-btn');
+    
+    // Solo cerrar el menú y ocultar el botón de cerrar en pantallas móviles
+    if (window.innerWidth <= 768) {
         menu.classList.remove('responsive');
         navResponsive.classList.remove('active');
+        closeBtn.style.display = 'none'; // Ocultar el botón de cerrar
     }
+}
+
+// Asegurarse de que el botón de cerrar esté oculto en pantallas grandes al cambiar el tamaño de la ventana
+window.addEventListener('resize', function() {
+    const closeBtn = document.querySelector('.close-btn');
+    const menu = document.querySelector('nav');
+    
+    if (window.innerWidth > 768) {
+        // Ocultar el botón de cerrar y eliminar cualquier clase 'responsive' en pantallas grandes
+        closeBtn.style.display = 'none';
+        menu.classList.remove('responsive');
+    }
+});
+
 </script>
-     
-<!-- SECCION INICIO -->
+<style>
+    .slide {
+        display: none; /* Ocultar todos los slides por defecto */
+    }
+
+    .slide.active {
+        display: block; /* Mostrar solo el slide activo */
+    }
+
+    /* Clase para los párrafos de descripción */
+    .description {
+        font-size: 20px; /* Tamaño de letra para escritorio */
+        line-height: 1.5; /* Espaciado entre líneas */
+    }
+
+    @media (max-width: 768px) {
+        .slider {
+            padding: 0 10px; /* Espaciado lateral en móviles */
+        }
+
+        h2 {
+            font-size: 20px; /* Tamaño de fuente del título en móviles */
+        }
+
+        .description {
+            font-size: 16px; /* Tamaño de letra para móviles */
+        }
+    }
+</style>
 <section id="inicio" class="inicio">
     <div class="slider">
         <div class="slides">
             <!-- Slide 1 -->
-            <div class="slide">
+            <div class="slide active">
                 <h2>DESARROLLO WEB</h2>
+                <p class="description">Construimos sitios web modernos y responsivos que se adaptan a tus necesidades.</p>
                 <div class="line"></div>
             </div>
             <!-- Slide 2 -->
             <div class="slide">
                 <h2>SOFTWARE A MEDIDA</h2>
+                <p class="description">Desarrollamos aplicaciones personalizadas para optimizar tus procesos empresariales.</p>
                 <div class="line"></div>
             </div>
             <!-- Slide 3 -->
             <div class="slide">
                 <h2>APPS MÓVILES</h2>
+                <p class="description">Diseñamos y desarrollamos aplicaciones móviles para mejorar la experiencia de usuarios.</p>
                 <div class="line"></div>
             </div>
             <!-- Slide 4 -->
             <div class="slide">
                 <h2>CURSOS DE OFIMÁTICA</h2>
+                <p class="description">Ofrecemos formación en herramientas de ofimática para aumentar tu productividad.</p>
                 <div class="line"></div>
             </div>
             <!-- Slide 5 -->
             <div class="slide">
                 <h2>DISEÑO GRÁFICO</h2>
+                <p class="description">Creamos identidades visuales atractivas que cuentan la historia de tu marca.</p>
                 <div class="line"></div>
             </div>
             <!-- Slide 6 -->
             <div class="slide">
                 <h2>AUTOMATIZACIÓN DE PROYECTOS</h2>
+                <p class="description">Implementamos soluciones para automatizar tareas y mejorar la eficiencia.</p>
                 <div class="line"></div>
             </div>
         </div>
@@ -143,6 +198,47 @@
 </section>
 
 
+<script>
+    let slideIndex = 0; // Índice de la diapositiva actual
+    let slideInterval; // Variable para almacenar el intervalo
+    const slides = document.getElementsByClassName("slide"); // Obtener todas las diapositivas
+    const dots = document.getElementsByClassName("dot"); // Obtener todos los puntos de navegación
+
+    showSlides(); // Mostrar la primera diapositiva
+
+    function currentSlide(n) {
+        slideIndex = n - 1; // Actualizar el índice al número de slide seleccionado
+        clearInterval(slideInterval); // Detener el intervalo actual
+        showSlides(); // Mostrar la diapositiva seleccionada
+        startSlideInterval(); // Reiniciar el intervalo
+    }
+
+    function showSlides() {
+        // Ocultar todas las diapositivas
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+            dots[i].classList.remove("active"); // Cambiar el estado de los puntos de navegación
+        }
+
+        // Mostrar la diapositiva activa
+        slides[slideIndex].classList.add("active");
+        dots[slideIndex].classList.add("active");
+
+        // Aumentar el índice del slide
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+            slideIndex = 0; // Volver al primer slide
+        }
+    }
+
+    function startSlideInterval() {
+        // Cambiar la diapositiva cada 5 segundos
+        slideInterval = setInterval(showSlides, 5000); // Establecer un nuevo intervalo
+    }
+
+    // Iniciar el intervalo cuando la página se carga
+    startSlideInterval();
+</script>
 
 
 
@@ -172,47 +268,84 @@
         </div>
     </div>
 </section>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const interests = document.querySelectorAll('.interes');
 
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.1
+        };
 
-    <!-- SECCION CURRICULUM -->
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        interests.forEach(interest => {
+            observer.observe(interest);
+        });
+    });
+    </script>
+
+<!-- SECCION CURRICULUM -->
 <section id="curriculum" class="curriculum">
     <div class="contenido-seccion">
-       
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-image">
-                    <img src="assets/img/Imagen-de-WhatsApp-2023-08-30-a-las-15.04.29.jpg" alt="Capacitación">
+        
+        <div class="fila">
+            <div class="col izquierda">
+                
+                <div class="item izq">
+                    <img style="border-radius: 10px; box-shadow: 0 0 5px 0 #b3b1b1;" src="assets/img/Imagen-de-WhatsApp-2023-08-30-a-las-15.04.29.jpg" alt="">
+                    <div class="conectori">
+                        <div class="circuloi"></div>
+                    </div>
                 </div>
-                <div class="card-content">
+                <div class="item izq">
                     <h4>Capacitando a la futura generación</h4>
-                    <p>Nos dedicamos a proporcionar educación, formación y recursos para empoderar a los jóvenes y prepararlos para enfrentar los desafíos y oportunidades del futuro.</p>
+                    
+                    <p> Nos dedicamos a proporcionar educación, formación y recursos para empoderar a los jóvenes y prepararlos para enfrentar los desafíos y oportunidades del futuro.</p>
+                    <div class="conectori">
+                        <div class="circuloi"></div>
+                    </div>
+                </div>
+                <div class="item izq">
+                    <img style="border-radius: 10px; box-shadow: 0 0 5px 0 #b3b1b1;" src="assets/img/Imagen-de-WhatsApp-2023-08-30-a-las-15.04.25.jpg" alt="">
+                    <div class="conectori">
+                        <div class="circuloi"></div>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="assets/img/Imagen-de-WhatsApp-2023-08-30-a-las-15.04.25.jpg" alt="Innovación">
+
+            <div class="col derecha">
+               
+                <div class="item der">
+                    <h4>Impulsando el potencial de los jóvenes mediante la innovación Tecnológica</h4>
+                    
+                    <p>En calidad de empresa líder, somos un equipo altamente capacitado de jóvenes profesionales dedicados a ofrecer soluciones digitales de excelencia. Desde el desarrollo de páginas web modernas y funcionales hasta estrategias de marketing digital efectivas, aplicaciones móviles personalizadas y soluciones de software innovadoras, nos enorgullece brindar a nuestros clientes un enfoque integral y innovador</p>
+                    <div class="conectord">
+                        <div class="circulod"></div>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h4>Innovación en acción</h4>
-                    <p>Nos enfocamos en la implementación de soluciones innovadoras para fomentar el crecimiento y el desarrollo.</p>
+                <div class="item der">
+                   
+                    <img style="border-radius: 10px; box-shadow: 0 0 5px 0 #b3b1b1;" src="assets/img/Imagen-de-WhatsApp-2023-09-27-a-las-10.17.59.jpg" alt="">
+                    <div class="conectord">
+                        <div class="circulod"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="assets/img/Imagen-de-WhatsApp-2023-09-27-a-las-10.17.59.jpg" alt="Tecnología">
-                </div>
-                <div class="card-content">
-                    <h4>Impulsando el potencial de los jóvenes mediante la innovación tecnológica</h4>
-                    <p>Somos un equipo altamente capacitado de jóvenes profesionales dedicados a ofrecer soluciones digitales de excelencia. Desde el desarrollo de páginas web modernas y funcionales hasta estrategias de marketing digital efectivas, aplicaciones móviles personalizadas y soluciones de software innovadoras.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="assets/img/Imagen-de-WhatsApp-2023-08-30-a-las-15.04.29.jpg" alt="Futuro">
-                </div>
-                <div class="card-content">
+                <div class="item der">
                     <h4>En el camino de la innovación</h4>
+                    
                     <p>Como navegantes del futuro, nos impulsa la visión de un mundo transformado por nuestras acciones. Nos esforzamos por construir un futuro en el que la tecnología y la innovación generen un impacto positivo en la sociedad y en los negocios.</p>
+                    <div class="conectord">
+                        <div class="circulod"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -413,7 +546,7 @@ hr{
     </footer>
     
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script>      
 
     </script>
       <!--=============== SWIPER JS ===============-->

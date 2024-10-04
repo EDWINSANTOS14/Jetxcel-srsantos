@@ -47,29 +47,6 @@
     </header>
 </div>
 
-<script>
-    // Alternar el menú
-    function toggleMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        const closeBtn = document.querySelector('.close-btn');
-        
-        // Alternar la clase 'responsive' del menú
-        menu.classList.toggle('responsive');
-        navResponsive.classList.toggle('active');
-        closeBtn.style.display = menu.classList.contains('responsive') ? 'block' : 'none';
-    }
-
-    // Cerrar el menú
-    function closeMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        
-        // Asegura que el menú se oculte y el ícono de menú se muestre
-        menu.classList.remove('responsive');
-        navResponsive.classList.remove('active');
-    }
-</script>
 
 
 <!-- SECCION SOBRE MI -->
@@ -86,6 +63,37 @@
             margin-right: 10px;
             color: #ffc107; /* Color de la flecha */
         }
+        @media screen and (max-width: 768px) {
+    .ofimatica-list {
+        padding-left: 0;
+    }
+    
+    .ofimatica-list li {
+        margin-bottom: 12px;
+        display: flex;
+        flex-direction: column; /* Hace que el texto se apile debajo del título en móviles */
+        align-items: flex-start;
+        font-size: 16px; /* Tamaño de fuente más pequeño para móviles */
+    }
+    
+    .ofimatica-list li:before {
+        content: ''; /* Ocultar la flecha en móviles si lo prefieres */
+    }
+
+    .ofimatica-list li b {
+        color: #ffc107; /* Mantiene el color destacado para los títulos */
+        margin-bottom: 4px; /* Espacio entre el título y el texto */
+        font-size: 18px;
+    }
+
+    /* Ajusta el tamaño del texto en dispositivos móviles para mejorar legibilidad */
+    .ofimatica-list p {
+        font-size: 16px; /* Texto más pequeño */
+    }
+}
+
+
+
     </style>
     
     <div class="contenido-seccion">
@@ -273,27 +281,27 @@
 <div class="pricing-section">
     <h2 style="font-size: 30px;color: #FDD01C; text-align: center;margin-bottom: 25px;">Nuestros Planes de Cursos de Ofimática</h2>
     <div class="pricing-toggle">
-        <span>Anual</span>
+        <span>Mensual</span>
         <input type="checkbox" id="toggle" />
         <label for="toggle"></label>
-        <span>Mensual</span>
+        <span>Anual</span>
     </div>
     <div class="cards">
         <div class="card">
             <div class="card-title">Plan Básico</div>
-            <div class="card-price" id="price-basic">$199.99</div>
+            <div class="card-price" id="price-basic">$19.99</div>
             <ul class="card-features">
                 <li>Acceso a cursos de Microsoft Word y Excel.</li>
                 <li>Soporte básico por correo electrónico.</li>
                 <li>Certificado de finalización.</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="#" class="card-button" id="info-basic">MÁS INFORMACIÓN</a>
+            </div>
         </div>
         <div class="card card-center">
             <div class="card-title">Plan Avanzado</div>
-            <div class="card-price" id="price-pro">$299.99</div>
+            <div class="card-price" id="price-pro">$29.99</div>
             <ul class="card-features">
                 <li>Acceso a todos los cursos del Plan Básico.</li>
                 <li>Cursos adicionales de PowerPoint y Google Workspace.</li>
@@ -301,13 +309,13 @@
                 <li>Acceso a seminarios web exclusivos.</li>
                 <li>Certificado avanzado de finalización.</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="#" class="card-button" id="info-pro">MÁS INFORMACIÓN</a>
+            </div>
         </div>
         <div class="card">
             <div class="card-title">Plan Profesional</div>
-            <div class="card-price" id="price-master">$499.99</div>
+            <div class="card-price" id="price-master">$49.99</div>
             <ul class="card-features">
                 <li>Acceso completo a todos los cursos de ofimática.</li>
                 <li>Soporte personalizado 24/7.</li>
@@ -315,32 +323,76 @@
                 <li>Acceso a todos los seminarios web y materiales exclusivos.</li>
                 <li>Certificado profesional de finalización.</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="#" class="card-button" id="info-master">MÁS INFORMACIÓN</a>
+            </div>
         </div>
     </div>
 </div>
-</div>
 
 <script>
-const toggle = document.getElementById('toggle');
-const priceBasic = document.getElementById('price-basic');
-const pricePro = document.getElementById('price-pro');
-const priceMaster = document.getElementById('price-master');
-
-toggle.addEventListener('change', function () {
-    if (toggle.checked) {
-        priceBasic.textContent = '$19.99';
-        pricePro.textContent = '$29.99';
-        priceMaster.textContent = '$49.99';
-    } else {
-        priceBasic.textContent = '$199.99';
-        pricePro.textContent = '$299.99';
-        priceMaster.textContent = '$499.99';
+    const toggle = document.getElementById('toggle');
+    const priceBasic = document.getElementById('price-basic');
+    const pricePro = document.getElementById('price-pro');
+    const priceMaster = document.getElementById('price-master');
+    
+    // Mensajes predeterminados
+    const messages = {
+        basic: {
+            monthly: "Estoy interesado en el Plan Básico Mensual.",
+            annual: "Estoy interesado en el Plan Básico Anual."
+        },
+        advanced: {
+            monthly: "Estoy interesado en el Plan Avanzado Mensual.",
+            annual: "Estoy interesado en el Plan Avanzado Anual."
+        },
+        professional: {
+            monthly: "Estoy interesado en el Plan Profesional Mensual.",
+            annual: "Estoy interesado en el Plan Profesional Anual."
+        }
+    };
+    
+    // Número de WhatsApp
+    const whatsappNumber = '573143594424'; // Número al que se enviarán los mensajes (sin el '+')
+    
+    // Función para redirigir a WhatsApp
+    function redirectToWhatsApp(plan, type) {
+        const message = messages[plan][type];
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
     }
-});
-</script>
+    
+    // Eventos de clic en los botones de información
+    document.getElementById('info-basic').addEventListener('click', function() {
+        const type = toggle.checked ? 'annual' : 'monthly';
+        redirectToWhatsApp('basic', type);
+    });
+    
+    document.getElementById('info-pro').addEventListener('click', function() {
+        const type = toggle.checked ? 'annual' : 'monthly';
+        redirectToWhatsApp('advanced', type);
+    });
+    
+    document.getElementById('info-master').addEventListener('click', function() {
+        const type = toggle.checked ? 'annual' : 'monthly';
+        redirectToWhatsApp('professional', type);
+    });
+    
+    // Cambia precios al cambiar el toggle
+    toggle.addEventListener('change', function () {
+        if (toggle.checked) {
+            priceBasic.textContent = '$199.99';
+            pricePro.textContent = '$299.99';
+            priceMaster.textContent = '$499.99';
+        } else {
+            priceBasic.textContent = '$19.99';
+            pricePro.textContent = '$29.99';
+            priceMaster.textContent = '$49.99';
+        }
+    });
+    </script>
+    
+    
 </section>
 
 
@@ -466,7 +518,7 @@ hr{
     </footer>
     
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
       <!--=============== SWIPER JS ===============-->
       <script src="assets/js/swiper-bundle.min.js"></script>
 

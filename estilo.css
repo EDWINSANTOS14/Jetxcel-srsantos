@@ -84,9 +84,22 @@ html {
     cursor: pointer;
     display: none;
 }
+/* Ocultar el botón de cerrar por defecto */
+.close-btn {
+    display: none;
+}
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) 
+{
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 1000;
+        cursor: pointer;
+    }
     .contenedor-header header ul {
         flex-direction: column;
         display: none;
@@ -106,7 +119,13 @@ html {
     .nav-responsive {
         display: block;
     }
+
+    /* Mostrar el botón de cerrar solo cuando el menú móvil esté abierto */
+    nav.responsive .close-btn {
+        display: block;
+    }
 }
+
 /* SECCION INICIO */
 .inicio {
     background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
@@ -280,7 +299,7 @@ html {
         font-size: 24px; /* Ajuste del tamaño del texto */
     }
     .sobremi .contenido-seccion p {
-        font-size: 16px; /* Ajuste del tamaño del texto */
+        font-size: 18px; /* Ajuste del tamaño del texto */
     }
     .sobremi .fila .col h3 {
         font-size: 24px; /* Ajuste del tamaño del texto */
@@ -633,78 +652,248 @@ html {
     0%{width: 0%;}
     100%{width: 94%;}
 }
-/* SECCION CURRICULUM */
-/* SECCION CURRICULUM */
-.curriculum {
-    background-color: #1E2326; /* Fondo oscuro */
-    color: #e0e0e0; /* Texto claro */
-    padding: 60px 20px;
-}
+/* Estilos para PC */
+@media (min-width: 769px) {
+    .curriculum {
+        background-color: #1e2326;
+        color: #fff;
+        padding: 50px 20px;
+    }
 
-.curriculum .contenido-seccion {
-    max-width: 1200px;
-    margin: auto;
-    text-align: center;
-}
+    .curriculum .contenido-seccion {
+        max-width: 1100px;
+        margin: auto;
+    }
 
-.curriculum h2 {
-    font-size: 36px;
-    color: #f5f5f5;
-    margin-bottom: 40px;
-    font-family: 'Arial', sans-serif;
-}
+    .curriculum h2 {
+        font-size: 48px;
+        font-family: 'Righteous';
+        text-align: center;
+        padding: 20px 0;
+    }
 
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px; /* Aumenta el espacio entre tarjetas */
-    justify-content: center;
-}
+    .curriculum .fila {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.card {
-    background-color: #252A2E; /* Fondo de cada tarjeta */
-    border-radius: 8px; /* Menos border-radius */
-    overflow: hidden;
-    width: 100%;
-    max-width: 420px; /* Aumenta el ancho máximo de la tarjeta */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .curriculum .fila .col {
+        width: 49%;
+        padding: 0 20px;
+    }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
-}
+    .curriculum .fila .col h3 {
+        font-size: 28px;
+        font-family: 'Righteous';
+        margin-bottom: 25px;
+    }
 
-.card-image img {
-    width: 100%;
-    height: 220px; /* Aumenta la altura de la imagen */
-    object-fit: cover;
-}
+    .curriculum .fila .izquierda {
+        border-right: 2px solid #252A2E;
+    }
 
-.card-content {
-    padding: 20px;
-}
+    .curriculum .fila .derecha {
+        border-left: 2px solid #252A2E;
+    }
 
-.card-content h4 {
-    font-size: 24px;
-    color: #f5f5f5;
-    margin-bottom: 10px;
-    font-family: 'Arial', sans-serif;
-}
+    .curriculum .fila .item {
+        padding: 25px;
+        margin-bottom: 30px;
+        background-color: #252A2E;
+        position: relative;
+    }
 
-.card-content p {
-    font-size: 16px;
-    color: #d0d0d0;
-    line-height: 1.6;
-}
+    .curriculum .fila .item h4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
 
-@media (max-width: 768px) {
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
+    .curriculum .fila .item .casa {
+        color: #1CB698;
+        font-size: 22px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .curriculum .fila .item .fecha {
+        display: block;
+        color: #FDD01C;
+        margin-bottom: 10px;
+    }
+
+    .curriculum .fila .item p {
+        line-height: 24px;
+    }
+
+    .curriculum .fila .izq {
+        border-right: 2px solid #FDD01C;
+        margin-right: 20px;
+    }
+
+    .curriculum .fila .der {
+        border-left: 2px solid #FDD01C;
+        margin-left: 20px;
+    }
+
+    .curriculum .fila .item .conectori {
+        height: 2px;
+        background-color: #FDD01C;
+        width: 47px;
+        position: absolute;
+        top: 50%;
+        right: -47px;
+        z-index: 5;
+    }
+
+    .curriculum .fila .item .conectori .circuloi {
+        display: block;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: #FDD01C;
+        float: right;
+        position: relative;
+        bottom: 4px;
+    }
+
+    .curriculum .fila .item .conectord {
+        height: 2px;
+        background-color: #FDD01C;
+        width: 47px;
+        position: absolute;
+        top: 50%;
+        left: -47px;
+        z-index: 5;
+    }
+
+    .curriculum .fila .item .conectord .circulod {
+        display: block;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: #FDD01C;
+        float: left;
+        position: relative;
+        bottom: 4px;
     }
 }
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .curriculum {
+        background-color: #1e2326; /* Mismo color de fondo que en PC */
+        padding: 20px 10px; /* Ajuste del padding para móviles */
+    }
+
+    .curriculum .contenido-seccion {
+        max-width: 100%; /* Ancho completo en móvil */
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+        align-items: center; /* Centrar el contenido en el centro */
+    }
+
+    .curriculum h2 {
+        font-size: 32px; /* Ajuste del tamaño de fuente para h2 */
+        text-align: center; /* Centrar el título */
+        color: #fff; /* Color de texto blanco para el título */
+    }
+
+    .curriculum .fila {
+        flex-direction: column; /* Cambio a columna en móviles */
+        align-items: center; /* Alineación centrada */
+    }
+
+    .curriculum .fila .col {
+        width: 100%; /* Ancho completo en móvil */
+        padding: 0; /* Sin padding para móviles */
+        display: flex;
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: center; /* Centrar elementos en el centro */
+    }
+
+    .curriculum .fila .item {
+        width: 100%; /* Ancho completo de la tarjeta */
+        max-width: 400px; /* Ajustar el ancho máximo de las tarjetas */
+        margin: 10px 0; /* Margen superior e inferior para separación */
+        background-color: #252A2E; /* Fondo de la tarjeta */
+        border-radius: 10px; /* Bordes redondeados */
+        padding: 20px; /* Espaciado interno */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
+        display: flex; /* Usar flexbox para el contenido */
+        flex-direction: column; /* Colocar contenido en columna */
+        align-items: center; /* Centrar el contenido */
+        text-align: justify; /* Justificar el texto */
+    }
+
+    .curriculum .fila .item img {
+        height: 50%;
+        width: 100%; /* Ancho completo de la imagen */
+        border-radius: 10px; /* Bordes redondeados para la imagen */
+        margin-bottom: 15px; /* Margen inferior para separación */
+        object-fit: cover;
+    }
+
+    .curriculum .fila .item h4 {
+        font-size: 24px; /* Ajuste del tamaño de fuente para h4 */
+        color: #fff; /* Color del texto */
+        text-align: center; /* Centrar texto */
+    }
+
+    .curriculum .fila .item p {
+        font-size: 18px; /* Ajuste del tamaño de fuente para párrafos */
+        line-height: 1.4; /* Ajuste de la altura de línea para móviles */
+        color: #fff; /* Color del texto */
+        text-align: justify; /* Justificar texto */
+    }
+}
+/* Estilos generales (PC por defecto) */
+.section {
+    padding: 30px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-size: 36px; /* Tamaño de letra en PC */
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 20px; /* Tamaño de texto en PC */
+    line-height: 1.8;
+}
+
+.section img {
+    width: 80%; /* Control del tamaño de la imagen en PC */
+    border-radius: 10px;
+}
+
+/* Estilos específicos para versión móvil */
+@media only screen and (max-width: 768px) {
+    .section {
+        padding: 20px; /* Ajusta el padding para móviles */
+    }
+
+    .section h2 {
+        font-size: 24px; /* Tamaño de letra en móviles */
+    }
+
+    .section p {
+        font-size: 18px; /* Tamaño de texto en móviles */
+        line-height: 1.6;
+    }
+
+    .section img {
+        width: 100%; /* Imagen al 100% en móviles */
+        border-radius: 10px;
+    }
+}
+
+
+
 /* SECCION NUESTROS CLIENTES */
 .clientes {
     background-color: #1a1a1a; /* Fondo oscuro */
@@ -1371,6 +1560,7 @@ footer .arriba {
     }
     .curriculum .fila .col {
         width: 90%;
+        margin-left: 20px;
     }
     .curriculum .fila .derecha {
         margin-left: 20px;

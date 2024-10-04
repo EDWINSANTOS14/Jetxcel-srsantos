@@ -47,35 +47,10 @@
     </header>
 </div>
 
-<script>
-    // Alternar el menú
-    function toggleMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        const closeBtn = document.querySelector('.close-btn');
-        
-        // Alternar la clase 'responsive' del menú
-        menu.classList.toggle('responsive');
-        navResponsive.classList.toggle('active');
-        closeBtn.style.display = menu.classList.contains('responsive') ? 'block' : 'none';
-    }
-
-    // Cerrar el menú
-    function closeMenu() {
-        const menu = document.querySelector('nav');
-        const navResponsive = document.querySelector('.nav-responsive');
-        
-        // Asegura que el menú se oculte y el ícono de menú se muestre
-        menu.classList.remove('responsive');
-        navResponsive.classList.remove('active');
-    }
-</script>
-
-
  <!-- SECCION SOBRE SOFTWARE A MEDIDA -->
  <section style="background-color: #1e2326;" id="sobremi" class="sobremi">
     <div class="contenido-seccion">
-        <h2 style="font-size: 30px; color: #FDD01C; text-align: center; margin-top: 25px;">Desarrollo de Software a Medida</h2>
+        <h2 style="font-size: 30px; color: #FDD01C; text-align: center; margin-top: 25px; letter-spacing: 2px;">Desarrollo de Software a Medida</h2>
         <p style="text-align: justify; color: white; margin-bottom: 20px;">
             En nuestra empresa de desarrollo de software en Tame, Arauca, nos especializamos en la creación de soluciones personalizadas que se adaptan a las necesidades específicas de tu negocio. Sabemos que cada empresa tiene requerimientos únicos, por eso ofrecemos soluciones de software a medida que combinan tecnología avanzada con una comprensión profunda de tus procesos.
         </p>
@@ -247,9 +222,9 @@
                 <li>Integración con Sistemas Existentes</li>
                 <li>Soporte Básico (3 meses)</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="https://wa.me/573143594424?text=Hola,%20estoy%20interesado%20en%20el%20Plan%20Básico%20de%20Desarrollo%20de%20Software%20a%20Medida." target="_blank" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
         </div>
         <div class="card card-center">
             <div class="card-title">Plan Profesional</div>
@@ -260,9 +235,9 @@
                 <li>Integración con Múltiples APIs y Servicios</li>
                 <li>Soporte Avanzado (6 meses)</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="https://wa.me/573143594424?text=Hola,%20estoy%20interesado%20en%20el%20Plan%20Profesional%20de%20Desarrollo%20de%20Software%20a%20Medida." target="_blank" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
         </div>
         <div class="card">
             <div class="card-title">Plan Empresarial</div>
@@ -273,12 +248,13 @@
                 <li>Integración de Sistemas Corporativos</li>
                 <li>Soporte Completo (12 meses)</li>
             </ul>
-            <!-- <div class="card-button-container">
-                <a href="#" class="card-button">MÁS INFORMACIÓN</a>
-            </div> -->
+            <div class="card-button-container">
+                <a href="https://wa.me/573143594424?text=Hola,%20estoy%20interesado%20en%20el%20Plan%20Empresarial%20de%20Desarrollo%20de%20Software%20a%20Medida." target="_blank" class="card-button">MÁS INFORMACIÓN</a>
+            </div>
         </div>
     </div>
 </div>
+
 
     <script>
         // Comentado el toggle ya que solo se ofrece un único pago por el producto completo
@@ -426,7 +402,7 @@ hr{
     </footer>
     
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
       <!--=============== SWIPER JS ===============-->
       <script src="assets/js/swiper-bundle.min.js"></script>
 

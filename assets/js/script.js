@@ -1,101 +1,49 @@
 
-
-let menuVisible = false;
-//Función que oculta o muestra el menu
-function mostrarOcultarMenu(){
-    if(menuVisible){
-        document.getElementById("nav").classList ="";
-        menuVisible = false;
-    }else{
-        document.getElementById("nav").classList ="responsive";
-        menuVisible = true;
+ // Alternar el menú
+ function toggleMenu() {
+    const menu = document.querySelector('nav');
+    const navResponsive = document.querySelector('.nav-responsive');
+    const closeBtn = document.querySelector('.close-btn');
+    
+    // Solo activar el menú en pantallas móviles
+    if (window.innerWidth <= 768) {
+        // Alternar la clase 'responsive' del menú
+        menu.classList.toggle('responsive');
+        navResponsive.classList.toggle('active');
+        
+        // Mostrar el botón de cerrar ('x') si el menú está abierto
+        closeBtn.style.display = menu.classList.contains('responsive') ? 'block' : 'none';
     }
 }
 
-function seleccionar(){
-    //oculto el menu una vez que selecciono una opcion
-    document.getElementById("nav").classList = "";
-    menuVisible = false;
-}
-//Funcion que aplica las animaciones de las habilidades
-function efectoHabilidades(){
-    var skills = document.getElementById("skills");
-    var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    if(distancia_skills >= 300){
-        let habilidades = document.getElementsByClassName("progreso");
-        habilidades[0].classList.add("javascript");
-        habilidades[1].classList.add("htmlcss");
-        habilidades[2].classList.add("photoshop");
-        habilidades[3].classList.add("wordpress");
-        habilidades[4].classList.add("drupal");
-        habilidades[5].classList.add("comunicacion");
-        habilidades[6].classList.add("trabajo");
-        habilidades[7].classList.add("creatividad");
-        habilidades[8].classList.add("dedicacion");
-        habilidades[9].classList.add("proyect");
+// Cerrar el menú
+function closeMenu() {
+    const menu = document.querySelector('nav');
+    const navResponsive = document.querySelector('.nav-responsive');
+    const closeBtn = document.querySelector('.close-btn');
+    
+    // Solo cerrar el menú y ocultar el botón de cerrar en pantallas móviles
+    if (window.innerWidth <= 768) {
+        menu.classList.remove('responsive');
+        navResponsive.classList.remove('active');
+        closeBtn.style.display = 'none'; // Ocultar el botón de cerrar
     }
 }
 
-
-//detecto el scrolling para aplicar la animacion de la barra de habilidades
-window.onscroll = function(){
-    efectoHabilidades();
-} 
-
-
-
-
-let slideIndex = 0;
-let slideInterval;
-showSlides();
-
-function showSlides() {
-    let slides = document.querySelectorAll('.slide');
-    let dots = document.querySelectorAll('.dot');
+// Asegurarse de que el botón de cerrar esté oculto en pantallas grandes al cambiar el tamaño de la ventana
+window.addEventListener('resize', function() {
+    const closeBtn = document.querySelector('.close-btn');
+    const menu = document.querySelector('nav');
     
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // Ocultar todas las diapositivas
+    if (window.innerWidth > 768) {
+        // Ocultar el botón de cerrar y eliminar cualquier clase 'responsive' en pantallas grandes
+        closeBtn.style.display = 'none';
+        menu.classList.remove('responsive');
     }
-    
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    
-    for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(' active', '');
-    }
-    
-    slides[slideIndex - 1].style.display = "flex"; // Mostrar la diapositiva actual
-    slides[slideIndex - 1].classList.add('zoom-animation');
-    dots[slideIndex - 1].className += " active";
-    
-    clearTimeout(slideInterval);
-    slideInterval = setTimeout(showSlides, 7000); // Cambiar la diapositiva cada 7 segundos
-}
+});
 
-function currentSlide(n) {
-    slideIndex = n - 1; // Ajustar el índice para que coincida con la diapositiva correcta
-    let slides = document.querySelectorAll('.slide');
-    let dots = document.querySelectorAll('.dot');
-    
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // Ocultar todas las diapositivas
-    }
-    
-    for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(' active', '');
-    }
-    
-    slides[slideIndex].style.display = "flex"; // Mostrar la diapositiva actual
-    slides[slideIndex].classList.add('slide-in-animation');
-    dots[slideIndex].className += " active";
-    
-    clearTimeout(slideInterval);
-    slideInterval = setTimeout(showSlides, 7000); // Reiniciar el temporizador de las diapositivas
-}   
 
-// SECCION DE + DE 1000 TAZAS DE CAFE
+// SECCIÓN DE + DE 1000 TAZAS DE CAFÉ
 document.addEventListener("DOMContentLoaded", function() {
     const interests = document.querySelectorAll('.interes');
 
@@ -117,4 +65,23 @@ document.addEventListener("DOMContentLoaded", function() {
     interests.forEach(interest => {
         observer.observe(interest);
     });
-}); 
+});
+
+// Función para pausar el slider en hover
+function pauseSlides() {
+    clearTimeout(slideInterval);
+}
+
+// Función para reanudar el slider después de pausar
+function resumeSlides() {
+    slideInterval = setTimeout(showSlides, 7000);
+}
+
+// Agregar eventos de hover para pausar y reanudar el slider
+document.querySelectorAll('.slide').forEach(slide => {
+    slide.addEventListener('mouseenter', pauseSlides);
+    slide.addEventListener('mouseleave', resumeSlides);
+});
+
+// Inicializar el slider
+showSlides();
